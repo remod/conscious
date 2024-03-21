@@ -1,33 +1,68 @@
-// ⤵️ import these
-import { ChartDataset, ChartOptions } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import ApexCharts from 'apexcharts';
+import {
+  ApexAxisChartSeries,
+  ApexChart,
+  ChartComponent,
+  ApexDataLabels,
+  ApexXAxis,
+  ApexPlotOptions,
+  NgApexchartsModule,
+} from 'ng-apexcharts';
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  dataLabels: ApexDataLabels;
+  plotOptions: ApexPlotOptions;
+  xaxis: ApexXAxis;
+};
 
 @Component({
+  imports: [NgApexchartsModule],
   selector: 'app-line-chart',
   standalone: true,
-  imports: [BaseChartDirective],
   templateUrl: './line-chart.component.html',
-  styleUrls: ['./line-chart.component.scss'],
+  styleUrls: ['./line-chart.component.css'],
 })
-export class LineChartComponent implements OnInit {
-  chartData: ChartDataset[] = [
-    {
-      label: '$ in millions',
-      data: [1551, 1688, 1800, 1895, 2124, 2124],
-    },
-  ];
-  chartLabels: string[] = [
-    '2016 Revenue',
-    '2017 Revenue',
-    '2018 Revenue',
-    '2019 Revenue',
-    '2020 Revenue',
-    '2021 Revenue',
-  ];
-  chartOptions: ChartOptions = {};
+export class LineChartComponent {
+  @ViewChild('chart') chart!: ChartComponent;
+  public chartOptions: Partial<ChartOptions>;
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor() {
+    this.chartOptions = {
+      series: [
+        {
+          name: 'basic',
+          data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
+        },
+      ],
+      chart: {
+        type: 'bar',
+        height: 350,
+      },
+      plotOptions: {
+        bar: {
+          horizontal: true,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      xaxis: {
+        categories: [
+          'South Korea',
+          'Canada',
+          'United Kingdom',
+          'Netherlands',
+          'Italy',
+          'France',
+          'Japan',
+          'United States',
+          'China',
+          'Germany',
+        ],
+      },
+    };
+  }
 }

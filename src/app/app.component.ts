@@ -7,7 +7,7 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
   standalone: true,
   imports: [RouterOutlet, LineChartComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'conscious';
