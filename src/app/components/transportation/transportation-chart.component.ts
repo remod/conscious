@@ -29,7 +29,7 @@ const data: Data[] = [
   { name: '🚶 Walking', co2e: 0 },
 ];
 
-export type ChartOptions = {
+type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
   dataLabels: ApexDataLabels;
