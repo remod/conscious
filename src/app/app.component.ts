@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LineChartComponent } from './components/line-chart/line-chart.component';
+import { TransportationChartComponent } from './components/transportation/transportation-chart.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LineChartComponent],
+  imports: [RouterOutlet, TransportationChartComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
