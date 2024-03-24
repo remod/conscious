@@ -13,11 +13,11 @@ export type Data = {
 };
 
 const data: Data[] = [
-  { name: 'Public Services', co2e: 1280 },
-  { name: 'Nutrition', co2e: 2110 },
   { name: 'Mobility', co2e: 4140 },
-  { name: 'Housing and Energy', co2e: 2190 },
   { name: 'Consumption (non Food)', co2e: 3800 },
+  { name: 'Housing and Energy', co2e: 2190 },
+  { name: 'Nutrition', co2e: 2110 },
+  { name: 'Public Services', co2e: 1280 },
 ];
 
 type ChartOptions = {
