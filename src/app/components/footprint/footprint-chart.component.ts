@@ -10,14 +10,41 @@ import {
 export type Data = {
   name: string;
   co2e: number;
+  source: string;
+  year: number;
 };
 
 const data: Data[] = [
-  { name: 'Mobility', co2e: 4140 },
-  { name: 'Consumption (non Food)', co2e: 3800 },
-  { name: 'Housing and Energy', co2e: 2190 },
-  { name: 'Nutrition', co2e: 2110 },
-  { name: 'Public Services', co2e: 1280 },
+  {
+    name: 'Mobility',
+    co2e: 4140,
+    source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+    year: 2024,
+  },
+  {
+    name: 'Consumption (non Food)',
+    co2e: 3800,
+    source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+    year: 2024,
+  },
+  {
+    name: 'Housing and Energy',
+    co2e: 2190,
+    source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+    year: 2024,
+  },
+  {
+    name: 'Nutrition',
+    co2e: 2110,
+    source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+    year: 2024,
+  },
+  {
+    name: 'Public Services',
+    co2e: 1280,
+    source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+    year: 2024,
+  },
 ];
 
 type ChartOptions = {
