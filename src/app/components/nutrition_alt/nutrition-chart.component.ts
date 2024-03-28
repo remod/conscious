@@ -18,28 +18,28 @@ export type Data = {
 
 const data: Data[] = [
   {
-    name: 'Vegan',
+    name: 'Base',
     co2e: 0.6 * (2110 - 482),
     source:
       'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2015,
   },
   {
-    name: 'Animal Products',
+    name: 'No Animal Products',
     co2e: (0.7 - 0.6) * (2110 - 482),
     source:
       'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2015,
   },
   {
-    name: 'Meat',
+    name: 'No Meat',
     co2e: (1.0 - 0.7) * (2110 - 482),
     source:
       'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2015,
   },
   {
-    name: 'Food Waste',
+    name: 'No Food Waste',
     co2e: 482,
     source:
       'https://www.bafu.admin.ch/dam/bafu/de/dokumente/abfall/externe-studien-berichte/lebensmittelverluste-in-der-schweiz-umweltbelastung-und-verminderungspotenzial.pdf.download.pdf/ETH-Bericht_Foodwaste_FINAL.pdf',
