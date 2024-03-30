@@ -6,15 +6,19 @@ import { NutritionAltChartComponent } from './components/nutrition_alt/nutrition
 import { TransportationChartComponent } from './components/transportation/transportation-chart.component';
 import { TransportationAltChartComponent } from './components/transportation-alt/transportation-chart.component';
 import { SavingsChartComponent } from './components/savings/savings-chart.component';
+import { BeveragesChartComponent } from './components/beverages/chart.component';
+import { FoodTransportChartComponent } from './components/food-transport/chart.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
+    BeveragesChartComponent,
+    FoodTransportChartComponent,
     FootprintChartComponent,
     NutritionChartComponent,
     NutritionAltChartComponent,
+    RouterOutlet,
     SavingsChartComponent,
     TransportationChartComponent,
     TransportationAltChartComponent,
