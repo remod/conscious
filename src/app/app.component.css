@@ -1,8 +1,13 @@
 h1 {
-    font-family: "Helvetica", sans-serif;
-    text-align: center;
+  font-family: "Helvetica", sans-serif;
+  text-align: center;
 }
 h3 {
-    font-family: "Helvetica", sans-serif;
-    text-align: center;
+  font-family: "Helvetica", sans-serif;
+  text-align: center;
+}
+/* Two columns with equal width */
+.horizontal2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

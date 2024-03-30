@@ -26,11 +26,11 @@ const electricCarCo2e: number = (89 + 75) / 2;
 
 const data: Data[] = [
   {
-    name: 'Base',
-    co2e: transportationSum - flightsSum - carSum,
+    name: 'No Flights',
+    co2e: flightsSum,
     source:
-      'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
-    year: 2023,
+      'https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20214259',
+    year: 2021,
   },
   {
     name: 'Use Public Transport instead of Car',
@@ -48,10 +48,31 @@ const data: Data[] = [
     year: 2023,
   },
   {
-    name: 'No Flights',
-    co2e: flightsSum,
+    name: 'No Meat',
+    co2e: (1.0 - 0.7) * (2110 - 482),
     source:
-      'https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20214259',
+      'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+    year: 2015,
+  },
+  {
+    name: 'No Food Waste',
+    co2e: 482,
+    source:
+      'https://www.bafu.admin.ch/dam/bafu/de/dokumente/abfall/externe-studien-berichte/lebensmittelverluste-in-der-schweiz-umweltbelastung-und-verminderungspotenzial.pdf.download.pdf/ETH-Bericht_Foodwaste_FINAL.pdf',
+    year: 2019,
+  },
+  {
+    name: 'No Animal Products (milk, eggs, cheese, etc.)',
+    co2e: (0.7 - 0.6) * (2110 - 482),
+    source:
+      'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+    year: 2015,
+  },
+  {
+    name: 'Recycling',
+    co2e: 507000000.0 / 8738791.0,
+    source:
+      'https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen',
     year: 2021,
   },
 ];
@@ -66,20 +87,24 @@ type ChartOptions = {
 
 @Component({
   imports: [NgApexchartsModule],
-  selector: 'transportation-alt-chart',
+  selector: 'savings-chart',
   standalone: true,
-  templateUrl: './transportation-chart.component.html',
-  styleUrls: ['./transportation-chart.component.css'],
+  templateUrl: './savings-chart.component.html',
+  styleUrls: ['./savings-chart.component.css'],
 })
-export class TransportationAltChartComponent {
+export class SavingsChartComponent {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() {
     this.chartOptions = {
-      series: data.map(({ name, co2e }) => ({ name, data: [co2e] })),
+      series: [
+        {
+          name: 'basic',
+          data: data.map((d) => d.co2e),
+        },
+      ],
       chart: {
-        stacked: true,
         type: 'bar',
         height: 350,
       },
@@ -92,7 +117,7 @@ export class TransportationAltChartComponent {
         enabled: false,
       },
       xaxis: {
-        categories: ['Transportation'],
+        categories: data.map((d) => d.name),
       },
     };
   }

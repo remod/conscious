@@ -5,6 +5,7 @@ import { NutritionChartComponent } from './components/nutrition/nutrition-chart.
 import { NutritionAltChartComponent } from './components/nutrition_alt/nutrition-chart.component';
 import { TransportationChartComponent } from './components/transportation/transportation-chart.component';
 import { TransportationAltChartComponent } from './components/transportation-alt/transportation-chart.component';
+import { SavingsChartComponent } from './components/savings/savings-chart.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { TransportationAltChartComponent } from './components/transportation-alt
     FootprintChartComponent,
     NutritionChartComponent,
     NutritionAltChartComponent,
+    SavingsChartComponent,
     TransportationChartComponent,
     TransportationAltChartComponent,
   ],
