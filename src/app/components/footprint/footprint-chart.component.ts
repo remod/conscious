@@ -22,6 +22,7 @@ const data: Data[] = [
     year: 2024,
   },
   {
+    // 270kg is clothing: https://www.europarl.europa.eu/topics/de/article/20201208STO93327/umweltauswirkungen-von-textilproduktion-und-abfallen-infografik
     name: 'Consumption (non Food)',
     co2e: 3800,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
