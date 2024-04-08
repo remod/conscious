@@ -30,7 +30,7 @@ const data: Data[] = [
     co2e: transportationSum - flightsSum - carSum,
     source:
       'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
-    year: 2023,
+    year: 2021,
   },
   {
     name: 'Use Public Transport instead of Car',
@@ -38,14 +38,14 @@ const data: Data[] = [
     co2e: carSum * (1 - electricCarCo2e / gasDieselCarCo2e),
     source:
       'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
-    year: 2023,
+    year: 2021,
   },
   {
     name: 'Use Electric instead of Gas or Diesel Car',
     co2e: (carSum * electricCarCo2e) / gasDieselCarCo2e,
     source:
       'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
-    year: 2023,
+    year: 2021,
   },
   {
     name: 'No Flights',

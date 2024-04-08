@@ -61,7 +61,7 @@ const data: Data[] = [
     category: Category.Mobility,
     source:
       'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
-    year: 2023,
+    year: 2021,
   },
   {
     name: 'Become Vegan',
@@ -77,7 +77,7 @@ const data: Data[] = [
     category: Category.Mobility,
     source:
       'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
-    year: 2023,
+    year: 2021,
   },
   {
     name: 'Become Vegetarian',

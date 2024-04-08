@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { BeveragesChartComponent } from './components/beverages/chart.component';
 import { FoodTransportChartComponent } from './components/food-transport/chart.component';
 import { FootprintChartComponent } from './components/footprint/footprint-chart.component';
+import { FootprintSunburstChartComponent } from './components/footprint-sunburst/chart.component';
 import { GoodsChartComponent } from './components/goods/chart.component';
 import { HeatingChartComponent } from './components/heating/chart.component';
 import { NutritionAltChartComponent } from './components/nutrition-alt/nutrition-chart.component';
@@ -18,6 +19,7 @@ import { TransportationChartComponent } from './components/transportation/transp
     BeveragesChartComponent,
     FoodTransportChartComponent,
     FootprintChartComponent,
+    FootprintSunburstChartComponent,
     GoodsChartComponent,
     HeatingChartComponent,
     NutritionAltChartComponent,
