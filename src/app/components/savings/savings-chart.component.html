@@ -1,4 +1,14 @@
 <div id="chart">
-    <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [dataLabels]="chartOptions.dataLabels!"
-        [plotOptions]="chartOptions.plotOptions!" [xaxis]="chartOptions.xaxis!"></apx-chart>
+  <apx-chart
+    [series]="chartOptions.series!"
+    [chart]="chartOptions.chart!"
+    [colors]="chartOptions.colors!"
+    [dataLabels]="chartOptions.dataLabels!"
+    [legend]="chartOptions.legend!"
+    [plotOptions]="chartOptions.plotOptions!"
+    [xaxis]="chartOptions.xaxis!"
+  ></apx-chart>
+  <body>
+    CO2eq, kg / year
+  </body>
 </div>

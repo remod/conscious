@@ -1,15 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
 import {
-  ApexChart,
+  ApexOptions,
   ChartComponent,
-  ApexResponsive,
   NgApexchartsModule,
-  ApexNonAxisChartSeries,
 } from 'ng-apexcharts';
+import { Category, categoryColor } from '../Category';
 
 export type Data = {
   name: string;
   co2e: number;
+  category: Category;
   source: string;
   year: number;
 };
@@ -18,6 +18,7 @@ const data: Data[] = [
   {
     name: 'Mobility',
     co2e: 4140,
+    category: Category.Mobility,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
@@ -25,35 +26,32 @@ const data: Data[] = [
     // 270kg is clothing: https://www.europarl.europa.eu/topics/de/article/20201208STO93327/umweltauswirkungen-von-textilproduktion-und-abfallen-infografik
     name: 'Consumption (non Food)',
     co2e: 3800,
+    category: Category.Consumption,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
   {
     name: 'Housing and Energy',
     co2e: 2190,
+    category: Category.Housing,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
   {
     name: 'Nutrition',
     co2e: 2110,
+    category: Category.Nutrition,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
   {
     name: 'Public Services',
     co2e: 1280,
+    category: Category.PublicServices,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
 ];
-
-type ChartOptions = {
-  series: ApexNonAxisChartSeries;
-  chart: ApexChart;
-  responsive: ApexResponsive[];
-  labels: any;
-};
 
 @Component({
   imports: [NgApexchartsModule],
@@ -64,7 +62,7 @@ type ChartOptions = {
 })
 export class FootprintChartComponent {
   @ViewChild('chart') chart!: ChartComponent;
-  public chartOptions: Partial<ChartOptions>;
+  public chartOptions: ApexOptions;
 
   constructor() {
     this.chartOptions = {
@@ -73,6 +71,7 @@ export class FootprintChartComponent {
         type: 'donut',
       },
       labels: data.map((d) => d.name),
+      colors: data.map((d) => categoryColor[d.category]),
       responsive: [
         {
           breakpoint: 480,
