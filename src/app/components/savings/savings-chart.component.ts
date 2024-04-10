@@ -1,12 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import {
-  ApexAxisChartSeries,
-  ApexChart,
   ApexOptions,
   ChartComponent,
-  ApexDataLabels,
-  ApexXAxis,
-  ApexPlotOptions,
   NgApexchartsModule,
 } from 'ng-apexcharts';
 import { Category, categoryColor } from '../Category';
@@ -138,14 +133,6 @@ const data: Data[] = [
     year: 2022,
   },
 ];
-
-type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  xaxis: ApexXAxis;
-};
 
 @Component({
   imports: [NgApexchartsModule],

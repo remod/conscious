@@ -25,6 +25,19 @@ const nationalAirplaneSum: number = nonAirplaneSum * 0.004;
 const trainSum: number = nonAirplaneSum * 0.002;
 const otherSum: number = nonAirplaneSum * 0.012;
 
+const nutritionSum: number = 2110;
+const foodWasteSum: number = 482;
+const consumedFoodSum: number = nutritionSum - foodWasteSum;
+const meatFishSum: number = consumedFoodSum * 0.29;
+const beveragesSum: number = consumedFoodSum * 0.21;
+const milkCheeseEggsSum: number = consumedFoodSum * 0.17;
+const fatOilsSum: number = consumedFoodSum * 0.1;
+const grainsSum: number = consumedFoodSum * 0.08;
+const transportDistributionPackagingSum: number = consumedFoodSum * 0.08;
+const vegetablesFruitsSum: number = consumedFoodSum * 0.06;
+const vegetableProteinSum: number = consumedFoodSum * 0.01;
+
+
 const numInhabitants2022: number = 8815400;
 
 @Component({
@@ -145,7 +158,10 @@ export class FootprintSunburstChartComponent implements OnInit {
         {
           // 270kg is clothing: https://www.europarl.europa.eu/topics/de/article/20201208STO93327/umweltauswirkungen-von-textilproduktion-und-abfallen-infografik
           name: 'Consumption (non Food)',
-          co2e: 3800 - (3468000000 + 643000000 + 296000000 + 162000000 + 63000000) / numInhabitants2022,
+          co2e:
+            3800 -
+            (3468000000 + 643000000 + 296000000 + 162000000 + 63000000) /
+              numInhabitants2022,
           category: Category.Consumption,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
@@ -237,10 +253,84 @@ export class FootprintSunburstChartComponent implements OnInit {
         },
         {
           name: 'Nutrition',
-          co2e: 2110,
+          co2e: 0,
           category: Category.Nutrition,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
+          children: [
+            {
+              name: 'Food Waste',
+              co2e: foodWasteSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.bafu.admin.ch/dam/bafu/de/dokumente/abfall/externe-studien-berichte/lebensmittelverluste-in-der-schweiz-umweltbelastung-und-verminderungspotenzial.pdf.download.pdf/ETH-Bericht_Foodwaste_FINAL.pdf',
+              year: 2019,
+            },
+            {
+              name: 'Meat and Fish',
+              co2e: meatFishSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Beverages',
+              co2e: beveragesSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Milk, Cheese, Eggs',
+              co2e: milkCheeseEggsSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Fat and Oils',
+              co2e: fatOilsSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Grains',
+              co2e: grainsSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Transport, Distribution, Packaging',
+              co2e: transportDistributionPackagingSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Vegetables and Fruits',
+              co2e: vegetablesFruitsSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Vegetable Protein',
+              co2e: vegetableProteinSum,
+              category: Category.Nutrition,
+              source:
+                'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+              year: 2022,
+            },
+          ],
         },
         {
           name: 'Public Services',
@@ -283,7 +373,7 @@ export class FootprintSunburstChartComponent implements OnInit {
       .data(sbdata)
       .size('co2e')
       .color((d) => categoryColor[(d as Data).category] || 'lightgrey')
-      .height(500)
+      .height(900)
       .showLabels(true)
       .tooltipContent((d, node) => `Size: <i>${node.value}</i>`)(
       this.chart.nativeElement
