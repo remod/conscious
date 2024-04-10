@@ -35,11 +35,39 @@ const data: Data[] = [
     year: 2021,
   },
   {
+    name: 'Sofa',
+    co2e: 90.0,
+    source:
+      'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/d9390f21-b3691a_o%CC%88kologische-auswirkung-nutzungsdauer-v1.1.pdf',
+    year: 2022,
+  },
+  {
+    name: 'Double Mattress',
+    co2e: 79.0,
+    source:
+      'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/d9390f21-b3691a_o%CC%88kologische-auswirkung-nutzungsdauer-v1.1.pdf',
+    year: 2022,
+  },
+  {
+    name: 'Office Desk',
+    co2e: 35.0,
+    source:
+      'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/d9390f21-b3691a_o%CC%88kologische-auswirkung-nutzungsdauer-v1.1.pdf',
+    year: 2022,
+  },
+  {
     name: 'Jeans',
     co2e: 33.4,
     source:
       'https://levistrauss.com/wp-content/uploads/2015/03/Full-LCA-Results-Deck-FINAL.pdf',
     year: 2015,
+  },
+  {
+    name: 'Wardrobe',
+    co2e: 31.0,
+    source:
+      'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/d9390f21-b3691a_o%CC%88kologische-auswirkung-nutzungsdauer-v1.1.pdf',
+    year: 2022,
   },
   {
     name: 'T-shirt, cotton, incl. 55 washes',

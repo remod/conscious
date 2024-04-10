@@ -27,6 +27,8 @@ const carSum: number = nonFlightsSum * 0.712;
 const gasDieselCarCo2e: number = 222;
 const electricCarCo2e: number = (89 + 75) / 2;
 
+const numInhabitants2022: number = 8815400;
+
 const data: Data[] = [
   {
     name: 'Avoid Flights',
@@ -104,11 +106,35 @@ const data: Data[] = [
     year: 2015,
   },
   {
+    name: 'Use Clothing 7 instead of 4 Years',
+    co2e: 1486000000 / numInhabitants2022,
+    category: Category.Consumption,
+    source:
+      'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+    year: 2022,
+  },
+  {
     name: 'Recycle',
     co2e: 507000000.0 / 8815400.0,
     category: Category.Consumption,
     source:
       'https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen',
+    year: 2022,
+  },
+  {
+    name: 'Use Furniture 13.5 instead of 10.5 Years',
+    co2e: 143000000 / numInhabitants2022,
+    category: Category.Consumption,
+    source:
+      'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+    year: 2022,
+  },
+  {
+    name: 'Use Smartphone 5.3 instead of 2.3 Years',
+    co2e: 91000000 / numInhabitants2022,
+    category: Category.Consumption,
+    source:
+      'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
     year: 2022,
   },
 ];

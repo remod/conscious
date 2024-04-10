@@ -25,6 +25,8 @@ const nationalAirplaneSum: number = nonAirplaneSum * 0.004;
 const trainSum: number = nonAirplaneSum * 0.002;
 const otherSum: number = nonAirplaneSum * 0.012;
 
+const numInhabitants2022: number = 8815400;
+
 @Component({
   selector: 'footprint-sunburst-chart',
   templateUrl: './chart.component.html',
@@ -143,18 +145,57 @@ export class FootprintSunburstChartComponent implements OnInit {
         {
           // 270kg is clothing: https://www.europarl.europa.eu/topics/de/article/20201208STO93327/umweltauswirkungen-von-textilproduktion-und-abfallen-infografik
           name: 'Consumption (non Food)',
-          co2e: 3800,
+          co2e: 3800 - (3468000000 + 643000000 + 296000000 + 162000000 + 63000000) / numInhabitants2022,
           category: Category.Consumption,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
+          children: [
+            {
+              name: 'Clothing',
+              co2e: 3468000000 / numInhabitants2022,
+              category: Category.Consumption,
+              source:
+                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Furniture',
+              co2e: 643000000 / numInhabitants2022,
+              category: Category.Consumption,
+              source:
+                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Notebooks',
+              co2e: 296000000 / numInhabitants2022,
+              category: Category.Consumption,
+              source:
+                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Smartphones',
+              co2e: 162000000 / numInhabitants2022,
+              category: Category.Consumption,
+              source:
+                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+              year: 2022,
+            },
+            {
+              name: 'Washing Machines',
+              co2e: 63000000 / numInhabitants2022,
+              category: Category.Consumption,
+              source:
+                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+              year: 2022,
+            },
+          ],
         },
         {
           name: 'Housing and Energy',
           co2e:
-            2190 -
-            6400000000 / 8815400 -
-            5900000000 / 8815400 -
-            630000000 / 8815400,
+            2190 - (6400000000 + 5900000000 + 630000000) / numInhabitants2022,
           category: Category.Housing,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
@@ -168,7 +209,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               children: [
                 {
                   name: 'Oil',
-                  co2e: 6400000000 / 8815400,
+                  co2e: 6400000000 / numInhabitants2022,
                   category: Category.Housing,
                   source:
                     'https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html',
@@ -176,7 +217,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Gas',
-                  co2e: 5900000000 / 8815400,
+                  co2e: 5900000000 / numInhabitants2022,
                   category: Category.Housing,
                   source:
                     'https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html',
@@ -184,7 +225,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Others',
-                  co2e: 630000000 / 8815400,
+                  co2e: 630000000 / numInhabitants2022,
                   category: Category.Housing,
                   source:
                     'https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html',
