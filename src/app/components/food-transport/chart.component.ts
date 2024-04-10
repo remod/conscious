@@ -11,7 +11,7 @@ import {
 
 export type Data = {
   name: string;
-  co2e: number;
+  co2_eq: number;
   source: string;
   year: number;
 };
@@ -19,35 +19,35 @@ export type Data = {
 const data: Data[] = [
   {
     name: 'Asparagus, truck from Switzerland',
-    co2e: 0.79,
+    co2_eq: 0.79,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2021,
   },
   {
     name: 'Asparagus, ship from Peru',
-    co2e: 1.37,
+    co2_eq: 1.37,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2021,
   },
   {
     name: 'Asparagus, airplane from Peru',
-    co2e: 14.9,
+    co2_eq: 14.9,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2021,
   },
   {
     name: 'Roses, airplane from Kenya',
-    co2e: 4.0,
+    co2_eq: 4.0,
     source:
       'https://www.geo.de/natur/nachhaltigkeit/rosen-aus-europa_30126542-30166538.html',
     year: 0,
   },
   {
     name: 'Roses, truck from Netherlands',
-    co2e: 68.0,
+    co2_eq: 68.0,
     source:
       'https://www.geo.de/natur/nachhaltigkeit/rosen-aus-europa_30126542-30166538.html',
     year: 0,
@@ -78,7 +78,7 @@ export class FoodTransportChartComponent {
       series: [
         {
           name: 'basic',
-          data: data.map((d) => d.co2e),
+          data: data.map((d) => d.co2_eq),
         },
       ],
       chart: {

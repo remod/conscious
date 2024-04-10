@@ -1,14 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-  ApexOptions,
-  ChartComponent,
-  NgApexchartsModule,
-} from 'ng-apexcharts';
+import { ApexOptions, ChartComponent, NgApexchartsModule } from 'ng-apexcharts';
 import { Category, categoryColor } from '../Category';
 
 export type Data = {
   name: string;
-  co2e: number;
+  co2_eq: number;
   category: Category;
   source: string | string[];
   year: number;
@@ -19,15 +15,15 @@ const flightsFraction: number = 0.27 / (0.27 + 0.23);
 const flightsSum: number = transportationSum * flightsFraction;
 const nonFlightsSum: number = transportationSum * (1 - flightsFraction);
 const carSum: number = nonFlightsSum * 0.712;
-const gasDieselCarCo2e: number = 222;
-const electricCarCo2e: number = (89 + 75) / 2;
+const gasDieselCarco2_eq: number = 222;
+const electricCarco2_eq: number = (89 + 75) / 2;
 
 const numInhabitants2022: number = 8815400;
 
 const data: Data[] = [
   {
     name: 'Avoid Flights',
-    co2e: flightsSum,
+    co2_eq: flightsSum,
     category: Category.Mobility,
     source:
       'https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20214259',
@@ -35,7 +31,7 @@ const data: Data[] = [
   },
   {
     name: 'Replace Fossil Fuel Heating with Renewable Heating',
-    co2e: ((4680 + 3650) / 2 - (710 + 490 + 380) / 3) / 2.19,
+    co2_eq: ((4680 + 3650) / 2 - (710 + 490 + 380) / 3) / 2.19,
     category: Category.Housing,
     source: [
       'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -45,7 +41,7 @@ const data: Data[] = [
   },
   {
     name: 'Install 10 kWp Solar Panels',
-    co2e: (0.128 - 0.042) * 10000,
+    co2_eq: (0.128 - 0.042) * 10000,
     category: Category.Housing,
     source:
       'https://www.swissolar.ch/01_wissen/swissolar-publikationen/branchen-faktenblatt_pv_ch_d.pdf',
@@ -54,7 +50,7 @@ const data: Data[] = [
   {
     name: 'Use Public Transport instead of Fossil Fuel Car',
     // TODO: Does not contain public transport emissions
-    co2e: carSum * (1 - electricCarCo2e / gasDieselCarCo2e),
+    co2_eq: carSum * (1 - electricCarco2_eq / gasDieselCarco2_eq),
     category: Category.Mobility,
     source:
       'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -62,7 +58,7 @@ const data: Data[] = [
   },
   {
     name: 'Become Vegan',
-    co2e: (1.0 - 0.6) * (2110 - 482),
+    co2_eq: (1.0 - 0.6) * (2110 - 482),
     category: Category.Nutrition,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -70,7 +66,7 @@ const data: Data[] = [
   },
   {
     name: 'Use Electric instead of Fossil Fuel Car',
-    co2e: (carSum * electricCarCo2e) / gasDieselCarCo2e,
+    co2_eq: (carSum * electricCarco2_eq) / gasDieselCarco2_eq,
     category: Category.Mobility,
     source:
       'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -78,7 +74,7 @@ const data: Data[] = [
   },
   {
     name: 'Become Vegetarian',
-    co2e: (1.0 - 0.7) * (2110 - 482),
+    co2_eq: (1.0 - 0.7) * (2110 - 482),
     category: Category.Nutrition,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -86,7 +82,7 @@ const data: Data[] = [
   },
   {
     name: 'Avoid Food Waste',
-    co2e: 482,
+    co2_eq: 482,
     category: Category.Nutrition,
     source:
       'https://www.bafu.admin.ch/dam/bafu/de/dokumente/abfall/externe-studien-berichte/lebensmittelverluste-in-der-schweiz-umweltbelastung-und-verminderungspotenzial.pdf.download.pdf/ETH-Bericht_Foodwaste_FINAL.pdf',
@@ -94,7 +90,7 @@ const data: Data[] = [
   },
   {
     name: 'Become Flexitarian',
-    co2e: (1.0 - 0.85) * (2110 - 482),
+    co2_eq: (1.0 - 0.85) * (2110 - 482),
     category: Category.Nutrition,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -102,7 +98,7 @@ const data: Data[] = [
   },
   {
     name: 'Use Clothing 7 instead of 4 Years',
-    co2e: 1486000000 / numInhabitants2022,
+    co2_eq: 1486000000 / numInhabitants2022,
     category: Category.Consumption,
     source:
       'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -110,7 +106,7 @@ const data: Data[] = [
   },
   {
     name: 'Recycle',
-    co2e: 507000000.0 / 8815400.0,
+    co2_eq: 507000000.0 / 8815400.0,
     category: Category.Consumption,
     source:
       'https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen',
@@ -118,7 +114,7 @@ const data: Data[] = [
   },
   {
     name: 'Use Furniture 13.5 instead of 10.5 Years',
-    co2e: 143000000 / numInhabitants2022,
+    co2_eq: 143000000 / numInhabitants2022,
     category: Category.Consumption,
     source:
       'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -126,7 +122,7 @@ const data: Data[] = [
   },
   {
     name: 'Use Smartphone 5.3 instead of 2.3 Years',
-    co2e: 91000000 / numInhabitants2022,
+    co2_eq: 91000000 / numInhabitants2022,
     category: Category.Consumption,
     source:
       'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -150,7 +146,7 @@ export class SavingsChartComponent {
       series: [
         {
           name: 'basic',
-          data: data.map((d) => d.co2e),
+          data: data.map((d) => d.co2_eq),
         },
       ],
       chart: {

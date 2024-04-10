@@ -11,22 +11,22 @@ import {
 
 export type Data = {
   name: string;
-  co2e: number;
+  co2_eq: number;
 };
 
 const data: Data[] = [
-  { name: '✈️ Plane', co2e: 375 },
-  { name: '🚗 Car, gas or diesel', co2e: 222 },
-  { name: '🚗 Car, hybrid', co2e: 171 },
-  { name: '🚗 Car, electric, CH electriciy', co2e: 89 },
-  { name: '🚗 Car, electric, eco electriciy', co2e: 75 },
-  { name: '🚌 Bus', co2e: 62 },
-  { name: '🚄 Train (avg. DE, FR, AT, IT)', co2e: 42 },
-  { name: '🚈 Public transport avg. CH', co2e: 25 },
-  { name: '🚲 E-bike', co2e: 14 },
-  { name: '🚲 Bicycle', co2e: 8 },
-  { name: '🚄 Train, CH', co2e: 7 },
-  { name: '🚶 Walking', co2e: 0 },
+  { name: '✈️ Plane', co2_eq: 375 },
+  { name: '🚗 Car, gas or diesel', co2_eq: 222 },
+  { name: '🚗 Car, hybrid', co2_eq: 171 },
+  { name: '🚗 Car, electric, CH electriciy', co2_eq: 89 },
+  { name: '🚗 Car, electric, eco electriciy', co2_eq: 75 },
+  { name: '🚌 Bus', co2_eq: 62 },
+  { name: '🚄 Train (avg. DE, FR, AT, IT)', co2_eq: 42 },
+  { name: '🚈 Public transport avg. CH', co2_eq: 25 },
+  { name: '🚲 E-bike', co2_eq: 14 },
+  { name: '🚲 Bicycle', co2_eq: 8 },
+  { name: '🚄 Train, CH', co2_eq: 7 },
+  { name: '🚶 Walking', co2_eq: 0 },
 ];
 
 type ChartOptions = {
@@ -53,7 +53,7 @@ export class TransportationChartComponent {
       series: [
         {
           name: 'basic',
-          data: data.map((d) => d.co2e),
+          data: data.map((d) => d.co2_eq),
         },
       ],
       chart: {

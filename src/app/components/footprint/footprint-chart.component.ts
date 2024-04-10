@@ -1,14 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-  ApexOptions,
-  ChartComponent,
-  NgApexchartsModule,
-} from 'ng-apexcharts';
+import { ApexOptions, ChartComponent, NgApexchartsModule } from 'ng-apexcharts';
 import { Category, categoryColor } from '../Category';
 
 export type Data = {
   name: string;
-  co2e: number;
+  co2_eq: number;
   category: Category;
   source: string;
   year: number;
@@ -17,7 +13,7 @@ export type Data = {
 const data: Data[] = [
   {
     name: 'Mobility',
-    co2e: 4140,
+    co2_eq: 4140,
     category: Category.Mobility,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
@@ -25,28 +21,28 @@ const data: Data[] = [
   {
     // 270kg is clothing: https://www.europarl.europa.eu/topics/de/article/20201208STO93327/umweltauswirkungen-von-textilproduktion-und-abfallen-infografik
     name: 'Consumption (non Food)',
-    co2e: 3800,
+    co2_eq: 3800,
     category: Category.Consumption,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
   {
     name: 'Housing and Energy',
-    co2e: 2190,
+    co2_eq: 2190,
     category: Category.Housing,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
   {
     name: 'Nutrition',
-    co2e: 2110,
+    co2_eq: 2110,
     category: Category.Nutrition,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
   },
   {
     name: 'Public Services',
-    co2e: 1280,
+    co2_eq: 1280,
     category: Category.PublicServices,
     source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
     year: 2024,
@@ -66,7 +62,7 @@ export class FootprintChartComponent {
 
   constructor() {
     this.chartOptions = {
-      series: data.map((d) => d.co2e),
+      series: data.map((d) => d.co2_eq),
       chart: {
         type: 'donut',
       },

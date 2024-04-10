@@ -5,7 +5,7 @@ import { Category, categoryColor } from '../Category';
 
 interface Data extends DataNode {
   name: string;
-  co2e: number;
+  co2_eq: number;
   category: Category;
   source: string;
   year: number;
@@ -57,14 +57,14 @@ export class FootprintSunburstChartComponent implements OnInit {
       children: [
         {
           name: 'Mobility',
-          co2e: 0, // 4140,
+          co2_eq: 0, // 4140,
           category: Category.Mobility,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
           children: [
             {
               name: 'Airplane',
-              co2e: 0, // airplaneSum,
+              co2_eq: 0, // airplaneSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -72,7 +72,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               children: [
                 {
                   name: 'International',
-                  co2e: airplaneSum - nationalAirplaneSum,
+                  co2_eq: airplaneSum - nationalAirplaneSum,
                   category: Category.Mobility,
                   source:
                     'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -80,7 +80,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'National',
-                  co2e: nationalAirplaneSum,
+                  co2_eq: nationalAirplaneSum,
                   category: Category.Mobility,
                   source:
                     'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -90,7 +90,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Car',
-              co2e: carSum,
+              co2_eq: carSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -98,7 +98,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Truck',
-              co2e: truckSum,
+              co2_eq: truckSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -106,7 +106,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Delivery Van',
-              co2e: deliveryVanSum,
+              co2_eq: deliveryVanSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -114,7 +114,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Bus',
-              co2e: busSum,
+              co2_eq: busSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -122,7 +122,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Motorcycle',
-              co2e: motorcycleSum,
+              co2_eq: motorcycleSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -130,7 +130,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Ship',
-              co2e: shipSum,
+              co2_eq: shipSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -138,7 +138,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Train',
-              co2e: trainSum,
+              co2_eq: trainSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -146,7 +146,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Other',
-              co2e: otherSum,
+              co2_eq: otherSum,
               category: Category.Mobility,
               source:
                 'https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html',
@@ -157,7 +157,7 @@ export class FootprintSunburstChartComponent implements OnInit {
         {
           // 270kg is clothing: https://www.europarl.europa.eu/topics/de/article/20201208STO93327/umweltauswirkungen-von-textilproduktion-und-abfallen-infografik
           name: 'Consumption (non Food)',
-          co2e:
+          co2_eq:
             3800 -
             (3468000000 + 643000000 + 296000000 + 162000000 + 63000000) /
               numInhabitants2022,
@@ -167,7 +167,7 @@ export class FootprintSunburstChartComponent implements OnInit {
           children: [
             {
               name: 'Clothing',
-              co2e: 3468000000 / numInhabitants2022,
+              co2_eq: 3468000000 / numInhabitants2022,
               category: Category.Consumption,
               source:
                 'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -175,7 +175,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Furniture',
-              co2e: 643000000 / numInhabitants2022,
+              co2_eq: 643000000 / numInhabitants2022,
               category: Category.Consumption,
               source:
                 'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -183,7 +183,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Notebooks',
-              co2e: 296000000 / numInhabitants2022,
+              co2_eq: 296000000 / numInhabitants2022,
               category: Category.Consumption,
               source:
                 'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -191,7 +191,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Smartphones',
-              co2e: 162000000 / numInhabitants2022,
+              co2_eq: 162000000 / numInhabitants2022,
               category: Category.Consumption,
               source:
                 'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -199,7 +199,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Washing Machines',
-              co2e: 63000000 / numInhabitants2022,
+              co2_eq: 63000000 / numInhabitants2022,
               category: Category.Consumption,
               source:
                 'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
@@ -209,7 +209,7 @@ export class FootprintSunburstChartComponent implements OnInit {
         },
         {
           name: 'Housing and Energy',
-          co2e:
+          co2_eq:
             2190 - (6400000000 + 5900000000 + 630000000) / numInhabitants2022,
           category: Category.Housing,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
@@ -217,14 +217,14 @@ export class FootprintSunburstChartComponent implements OnInit {
           children: [
             {
               name: 'Heating',
-              co2e: 0,
+              co2_eq: 0,
               category: Category.Housing,
               source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
               year: 2024,
               children: [
                 {
                   name: 'Oil',
-                  co2e: 6400000000 / numInhabitants2022,
+                  co2_eq: 6400000000 / numInhabitants2022,
                   category: Category.Housing,
                   source:
                     'https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html',
@@ -232,7 +232,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Gas',
-                  co2e: 5900000000 / numInhabitants2022,
+                  co2_eq: 5900000000 / numInhabitants2022,
                   category: Category.Housing,
                   source:
                     'https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html',
@@ -240,7 +240,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Others',
-                  co2e: 630000000 / numInhabitants2022,
+                  co2_eq: 630000000 / numInhabitants2022,
                   category: Category.Housing,
                   source:
                     'https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html',
@@ -252,14 +252,14 @@ export class FootprintSunburstChartComponent implements OnInit {
         },
         {
           name: 'Nutrition',
-          co2e: 0,
+          co2_eq: 0,
           category: Category.Nutrition,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
           children: [
             {
               name: 'Food Waste',
-              co2e: foodWasteSum,
+              co2_eq: foodWasteSum,
               category: Category.Nutrition,
               source:
                 'https://www.bafu.admin.ch/dam/bafu/de/dokumente/abfall/externe-studien-berichte/lebensmittelverluste-in-der-schweiz-umweltbelastung-und-verminderungspotenzial.pdf.download.pdf/ETH-Bericht_Foodwaste_FINAL.pdf',
@@ -267,7 +267,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Meat and Fish',
-              co2e: meatFishSum,
+              co2_eq: meatFishSum,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -275,7 +275,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               children: [
                 {
                   name: 'Beef and Veal',
-                  co2e: (10.98 + 2.17) * 13.3,
+                  co2_eq: (10.98 + 2.17) * 13.3,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -283,7 +283,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Pork',
-                  co2e: 20.7 * 3.4,
+                  co2_eq: 20.7 * 3.4,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -291,7 +291,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Chicken',
-                  co2e: 14.99 * 3.4,
+                  co2_eq: 14.99 * 3.4,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -301,7 +301,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Beverages',
-              co2e: beveragesSum,
+              co2_eq: beveragesSum,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -309,7 +309,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               children: [
                 {
                   name: 'Red Wine',
-                  co2e: 17.42 * 2.3,
+                  co2_eq: 17.42 * 2.3,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -317,7 +317,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'White Wine',
-                  co2e: 9.49 * 2.4,
+                  co2_eq: 9.49 * 2.4,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -327,7 +327,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Milk, Cheese, Eggs',
-              co2e: milkCheeseEggsSum - 46.0 * 1.4,
+              co2_eq: milkCheeseEggsSum - 46.0 * 1.4,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -335,7 +335,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               children: [
                 {
                   name: 'Cheese',
-                  co2e: 22.9 * 8.5,
+                  co2_eq: 22.9 * 8.5,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -343,7 +343,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Butter',
-                  co2e: 5.3 * 23.8,
+                  co2_eq: 5.3 * 23.8,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -351,7 +351,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Milk',
-                  co2e: 46.0 * 1.4,
+                  co2_eq: 46.0 * 1.4,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -359,7 +359,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Cream',
-                  co2e: 7.78 * 7.6,
+                  co2_eq: 7.78 * 7.6,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -367,7 +367,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Eggs',
-                  co2e:
+                  co2_eq:
                     185.6 *
                     0.06 * // https://www.swissmilk.ch/de/rezepte-kochideen/tipps-tricks/wie-viel-wiegt-ein-ei/
                     2.0,
@@ -378,7 +378,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'Joghurt',
-                  co2e: 15.3 * 1.2,
+                  co2_eq: 15.3 * 1.2,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -388,7 +388,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Fat and Oils',
-              co2e: fatOilsSum,
+              co2_eq: fatOilsSum,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -396,7 +396,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Grains',
-              co2e: grainsSum,
+              co2_eq: grainsSum,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -404,7 +404,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Transport, Distribution, Packaging',
-              co2e: transportDistributionPackagingSum,
+              co2_eq: transportDistributionPackagingSum,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -412,7 +412,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Vegetables and Fruits',
-              co2e: vegetablesFruitsSum,
+              co2_eq: vegetablesFruitsSum,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -420,7 +420,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Vegetable Protein',
-              co2e: vegetableProteinSum,
+              co2_eq: vegetableProteinSum,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -430,7 +430,7 @@ export class FootprintSunburstChartComponent implements OnInit {
         },
         {
           name: 'Public Services',
-          co2e: 1280,
+          co2_eq: 1280,
           category: Category.PublicServices,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
@@ -440,7 +440,7 @@ export class FootprintSunburstChartComponent implements OnInit {
 
     Sunburst()
       .data(sbdata)
-      .size('co2e')
+      .size('co2_eq')
       .color((d) => categoryColor[(d as Data).category] || 'lightgrey')
       .height(900)
       .showLabels(true)

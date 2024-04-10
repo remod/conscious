@@ -11,7 +11,7 @@ import {
 
 export type Data = {
   name: string;
-  co2e: number;
+  co2_eq: number;
   source: string;
   year: number;
 };
@@ -19,35 +19,35 @@ export type Data = {
 const data: Data[] = [
   {
     name: 'Water Heat Pump',
-    co2e: 380,
+    co2_eq: 380,
     source:
       'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
     year: 0,
   },
   {
     name: 'Air Heat Pump',
-    co2e: 490,
+    co2_eq: 490,
     source:
       'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
     year: 0,
   },
   {
     name: 'Wood Pellets',
-    co2e: 710,
+    co2_eq: 710,
     source:
       'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
     year: 0,
   },
   {
     name: 'Gas',
-    co2e: 3650,
+    co2_eq: 3650,
     source:
       'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
     year: 0,
   },
   {
     name: 'Oil',
-    co2e: 4680,
+    co2_eq: 4680,
     source:
       'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
     year: 0,
@@ -78,7 +78,7 @@ export class HeatingChartComponent {
       series: [
         {
           name: 'basic',
-          data: data.map((d) => d.co2e),
+          data: data.map((d) => d.co2_eq),
         },
       ],
       chart: {
