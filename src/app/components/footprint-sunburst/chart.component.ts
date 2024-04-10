@@ -223,6 +223,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               year: 2024,
               children: [
                 {
+                  // TODO: Does not contain the heater itself.
                   name: 'Oil',
                   co2_eq: 6400000000 / numInhabitants2022,
                   category: Category.Housing,
@@ -231,6 +232,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                   year: 2022,
                 },
                 {
+                  // TODO: Does not contain the heater itself.
                   name: 'Gas',
                   co2_eq: 5900000000 / numInhabitants2022,
                   category: Category.Housing,
@@ -239,6 +241,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                   year: 2022,
                 },
                 {
+                  // TODO: Does not contain the heater itself.
                   name: 'Others',
                   co2_eq: 630000000 / numInhabitants2022,
                   category: Category.Housing,
@@ -267,7 +270,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Meat and Fish',
-              co2_eq: meatFishSum,
+              co2_eq: meatFishSum - (10.98 + 2.17) * 13.3 - 20.7 * 3.4 - 14.99 * 3.4,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -301,7 +304,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Beverages',
-              co2_eq: beveragesSum,
+              co2_eq: beveragesSum - 17.42 * 2.3 - 9.49 * 2.4,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -327,7 +330,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Milk, Cheese, Eggs',
-              co2_eq: milkCheeseEggsSum - 46.0 * 1.4,
+              co2_eq: milkCheeseEggsSum - 22.9 * 8.5 - 5.3 * 23.8 - 46.0 * 1.4 - 7.78 * 7.6 - 185.6 * 0.06 * 2.0 - 15.3 * 1.2,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
