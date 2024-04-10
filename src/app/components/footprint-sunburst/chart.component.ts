@@ -329,6 +329,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               ],
             },
             {
+              // TODO: milkCheeseEggsSum seems to be too small compared to the sum of the children.
               name: 'Milk, Cheese, Eggs',
               co2_eq: milkCheeseEggsSum - 22.9 * 8.5 - 5.3 * 23.8 - 46.0 * 1.4 - 7.78 * 7.6 - 185.6 * 0.06 * 2.0 - 15.3 * 1.2,
               category: Category.Nutrition,

@@ -31,10 +31,13 @@ const data: Data[] = [
   },
   {
     name: 'Replace Fossil Fuel Heating with Renewable Heating',
-    co2_eq: ((4680 + 3650) / 2 - (710 + 490 + 380) / 3) / 2.19,
+    co2_eq:
+      ((4680 + 3650) / 2 - // Average of oil and gas.
+        (710 + 490 + 380) / 3) / // Average of pellet, heat pump, and earth heat.
+      2.19, // Average number of members per household.
     category: Category.Housing,
     source: [
-      'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+      'https://www.houzy.ch/post/co2-emissionen-von-heizungen',
       'https://www.bfs.admin.ch/news/de/2022-0544',
     ],
     year: 2015, // resp. 2022 for the 2nd link
@@ -146,7 +149,7 @@ export class SavingsChartComponent {
       series: [
         {
           name: 'basic',
-          data: data.map((d) => d.co2_eq),
+          data: data.map((d) => (d.co2_eq / 13520) * 100),
         },
       ],
       chart: {
