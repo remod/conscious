@@ -53,6 +53,13 @@ const data: Data[] = [
     year: 2021,
   },
   {
+    name: 'Potatos',
+    co2e: 0.2,
+    source:
+      'https://www.geo.de/natur/nachhaltigkeit/reis_30126546-30166538.html',
+    year: 0,
+  },
+  {
     name: 'Mineral Water, sparkling & cooled',
     co2e: 0.26,
     source:
@@ -137,6 +144,13 @@ const data: Data[] = [
     year: 2021,
   },
   {
+    name: 'Pasta',
+    co2e: 1.0,
+    source:
+      'https://www.geo.de/natur/nachhaltigkeit/reis_30126546-30166538.html',
+    year: 0,
+  },
+  {
     name: 'Milk',
     co2e: 1.4,
     source:
@@ -163,6 +177,104 @@ const data: Data[] = [
     source:
       'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2021,
+  },
+  {
+    name: 'Coconut Oil',
+    co2e: 2.3,
+    source:
+      'https://www.swrfernsehen.de/marktcheck/oekochecker/wie-gesund-und-nachhaltig-sind-oele-100.html#:~:text=Der%20CO2%2DFu%C3%9Fabdruck%20von%20Oliven%C3%B6l,2%20kg%20CO2*%20pro%20Kilogramm.',
+    year: 2022,
+  },
+  {
+    name: 'Palm Oil',
+    co2e: 2.9,
+    source:
+      'https://www.swrfernsehen.de/marktcheck/oekochecker/wie-gesund-und-nachhaltig-sind-oele-100.html#:~:text=Der%20CO2%2DFu%C3%9Fabdruck%20von%20Oliven%C3%B6l,2%20kg%20CO2*%20pro%20Kilogramm.',
+    year: 2022,
+  },
+  {
+    name: 'Asian Rice',
+    co2e: 3.0,
+    source:
+      'https://www.geo.de/natur/nachhaltigkeit/reis_30126546-30166538.html',
+    year: 0,
+  },
+  {
+    name: 'Sunflower Oil',
+    co2e: 3.2,
+    source:
+      'https://www.swrfernsehen.de/marktcheck/oekochecker/wie-gesund-und-nachhaltig-sind-oele-100.html#:~:text=Der%20CO2%2DFu%C3%9Fabdruck%20von%20Oliven%C3%B6l,2%20kg%20CO2*%20pro%20Kilogramm.',
+    year: 2022,
+  },
+  {
+    name: 'Olive Oil',
+    co2e: 3.2,
+    source:
+      'https://www.swrfernsehen.de/marktcheck/oekochecker/wie-gesund-und-nachhaltig-sind-oele-100.html#:~:text=Der%20CO2%2DFu%C3%9Fabdruck%20von%20Oliven%C3%B6l,2%20kg%20CO2*%20pro%20Kilogramm.',
+    year: 2022,
+  },
+  {
+    name: 'Rapeseed Oil',
+    co2e: 3.3,
+    source:
+      'https://www.swrfernsehen.de/marktcheck/oekochecker/wie-gesund-und-nachhaltig-sind-oele-100.html#:~:text=Der%20CO2%2DFu%C3%9Fabdruck%20von%20Oliven%C3%B6l,2%20kg%20CO2*%20pro%20Kilogramm.',
+    year: 2022,
+  },
+  {
+    name: 'Chicken',
+    co2e: 3.4,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
+  },
+  {
+    name: 'Pork',
+    co2e: 3.4,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
+  },
+  {
+    name: 'Chocolate',
+    co2e: 3.5,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
+  },
+  {
+    name: 'Frozen Fries',
+    co2e: 5.7,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
+  },
+  {
+    name: 'Cream',
+    co2e: 7.6,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
+  },
+  {
+    name: 'Cheese',
+    co2e: 8.5,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
+  },
+  {
+    name: 'Beef',
+    co2e: 13.3,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
+  },
+  {
+    name: 'Butter',
+    co2e: 23.8,
+    source:
+      'https://www.nachhaltigleben.ch/food/die-groessten-klimasuender-unter-den-lebensmitteln-4781',
+    year: 0,
   },
 ];
 

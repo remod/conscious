@@ -18,25 +18,39 @@ export type Data = {
 
 const data: Data[] = [
   {
-    name: 'Truck from Switzerland',
+    name: 'Asparagus, truck from Switzerland',
     co2e: 0.79,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2021,
   },
   {
-    name: 'Ship from Peru',
+    name: 'Asparagus, ship from Peru',
     co2e: 1.37,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2021,
   },
   {
-    name: 'Airplane from Peru',
+    name: 'Asparagus, airplane from Peru',
     co2e: 14.9,
     source:
       'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
     year: 2021,
+  },
+  {
+    name: 'Roses, airplane from Kenya',
+    co2e: 4.0,
+    source:
+      'https://www.geo.de/natur/nachhaltigkeit/rosen-aus-europa_30126542-30166538.html',
+    year: 0,
+  },
+  {
+    name: 'Roses, truck from Netherlands',
+    co2e: 68.0,
+    source:
+      'https://www.geo.de/natur/nachhaltigkeit/rosen-aus-europa_30126542-30166538.html',
+    year: 0,
   },
 ];
 
