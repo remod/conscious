@@ -37,7 +37,6 @@ const transportDistributionPackagingSum: number = consumedFoodSum * 0.08;
 const vegetablesFruitsSum: number = consumedFoodSum * 0.06;
 const vegetableProteinSum: number = consumedFoodSum * 0.01;
 
-
 const numInhabitants2022: number = 8815400;
 
 @Component({
@@ -273,6 +272,32 @@ export class FootprintSunburstChartComponent implements OnInit {
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
               year: 2022,
+              children: [
+                {
+                  name: 'Beef and Veal',
+                  co2e: (10.98 + 2.17) * 13.3,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'Pork',
+                  co2e: 20.7 * 3.4,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'Chicken',
+                  co2e: 14.99 * 3.4,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+              ],
             },
             {
               name: 'Beverages',
@@ -281,14 +306,85 @@ export class FootprintSunburstChartComponent implements OnInit {
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
               year: 2022,
+              children: [
+                {
+                  name: 'Red Wine',
+                  co2e: 17.42 * 2.3,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'White Wine',
+                  co2e: 9.49 * 2.4,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+              ],
             },
             {
               name: 'Milk, Cheese, Eggs',
-              co2e: milkCheeseEggsSum,
+              co2e: milkCheeseEggsSum - 46.0 * 1.4,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
               year: 2022,
+              children: [
+                {
+                  name: 'Cheese',
+                  co2e: 22.9 * 8.5,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'Butter',
+                  co2e: 5.3 * 23.8,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'Milk',
+                  co2e: 46.0 * 1.4,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'Cream',
+                  co2e: 7.78 * 7.6,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'Eggs',
+                  co2e:
+                    185.6 *
+                    0.06 * // https://www.swissmilk.ch/de/rezepte-kochideen/tipps-tricks/wie-viel-wiegt-ein-ei/
+                    2.0,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+                {
+                  name: 'Joghurt',
+                  co2e: 15.3 * 1.2,
+                  category: Category.Nutrition,
+                  source:
+                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
+                  year: 2022,
+                },
+              ],
             },
             {
               name: 'Fat and Oils',
@@ -339,33 +435,6 @@ export class FootprintSunburstChartComponent implements OnInit {
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
         },
-        // {
-        //   name: 'b',
-        //   color: 'red',
-        //   children: [
-        //     {
-        //       name: 'ba',
-        //       color: 'orange',
-        //       size: 1,
-        //     },
-        //     {
-        //       name: 'bb',
-        //       color: 'blue',
-        //       children: [
-        //         {
-        //           name: 'bba',
-        //           color: 'green',
-        //           size: 1,
-        //         },
-        //         {
-        //           name: 'bbb',
-        //           color: 'pink',
-        //           size: 1,
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
       ],
     };
 
@@ -375,7 +444,7 @@ export class FootprintSunburstChartComponent implements OnInit {
       .color((d) => categoryColor[(d as Data).category] || 'lightgrey')
       .height(900)
       .showLabels(true)
-      .tooltipContent((d, node) => `Size: <i>${node.value}</i>`)(
+      .tooltipContent((d, node) => `CO2-eq: <i>${node.value}</i>`)(
       this.chart.nativeElement
     );
   }

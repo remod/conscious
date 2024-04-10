@@ -76,6 +76,20 @@ const data: Data[] = [
       'https://systain.com/wp-content/uploads/2022/08/Systain_Whitepaper_Carbon-Footprint-von-Bekleidung_de-2.pdf',
     year: 2022,
   },
+  {
+    name: '1l Diesel',
+    co2e: 2.6,
+    source:
+      'https://www.sueddeutsche.de/leben/auto-warum-ist-der-co2-ausstoss-schwerer-als-der-verbrannte-sprit-dpa.urn-newsml-dpa-com-20090101-140121-99-01441',
+    year: 2009,
+  },
+  {
+    name: '1l Gas',
+    co2e: 2.3,
+    source:
+      'https://www.sueddeutsche.de/leben/auto-warum-ist-der-co2-ausstoss-schwerer-als-der-verbrannte-sprit-dpa.urn-newsml-dpa-com-20090101-140121-99-01441',
+    year: 2009,
+  },
 ];
 
 type ChartOptions = {
