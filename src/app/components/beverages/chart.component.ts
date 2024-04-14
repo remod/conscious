@@ -514,7 +514,7 @@ export class BeveragesChartComponent {
       ],
       chart: {
         type: 'bar',
-        height: 350,
+        height: 1000,
       },
       plotOptions: {
         bar: {
