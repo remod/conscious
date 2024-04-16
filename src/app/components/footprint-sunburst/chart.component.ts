@@ -162,8 +162,7 @@ export class FootprintSunburstChartComponent implements OnInit {
             890 -
             740 -
             680 -
-            610 -
-            140 -
+            680 -
             480 -
             330,
           category: Category.Consumption,
@@ -186,14 +185,6 @@ export class FootprintSunburstChartComponent implements OnInit {
               year: 0,
             },
             {
-              name: 'Construction',
-              co2_eq: 750,
-              category: Category.Consumption,
-              source:
-                'https://www.swissbau.ch/de/c/wie-kann-die-bauwirtschaft-die-treibhausgasemissionen-senken.44328',
-              year: 0,
-            },
-            {
               name: 'Spare Time and Culture, e.g. Pets, Fitness, Magazines, Cinema, Entertainment Devices, etc.',
               co2_eq: 740,
               category: Category.Consumption,
@@ -202,6 +193,13 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Restaurants and Hotels',
+              co2_eq: 680,
+              category: Category.Consumption,
+              source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+              year: 0,
+            },
+            {
+              name: 'Construction',
               co2_eq: 680,
               category: Category.Consumption,
               source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
