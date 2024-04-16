@@ -158,53 +158,109 @@ export class FootprintSunburstChartComponent implements OnInit {
           // 270kg is clothing: https://www.europarl.europa.eu/topics/de/article/20201208STO93327/umweltauswirkungen-von-textilproduktion-und-abfallen-infografik
           name: 'Consumption (non Food)',
           co2_eq:
-            3800 -
-            (3468000000 + 643000000 + 296000000 + 162000000 + 63000000) /
-              numInhabitants2022,
+            3800 /*- (11000000000 + 3468000000) / numInhabitants2022*/ -
+            890 -
+            740 -
+            680 -
+            610 -
+            140 -
+            480 -
+            330,
           category: Category.Consumption,
           source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
           year: 2024,
           children: [
+            // {
+            //   name: 'Construction',
+            //   co2_eq: 11000000000 / numInhabitants2022,
+            //   category: Category.Consumption,
+            //   source:
+            //     'https://www.swissbau.ch/de/c/wie-kann-die-bauwirtschaft-die-treibhausgasemissionen-senken.44328',
+            //   year: 0,
+            // },
             {
-              name: 'Clothing',
-              co2_eq: 3468000000 / numInhabitants2022,
+              name: 'Furniture and Household Devices',
+              co2_eq: 890,
               category: Category.Consumption,
-              source:
-                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
-              year: 2022,
+              source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+              year: 0,
             },
             {
-              name: 'Furniture',
-              co2_eq: 643000000 / numInhabitants2022,
+              name: 'Construction',
+              co2_eq: 750,
               category: Category.Consumption,
               source:
-                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
-              year: 2022,
+                'https://www.swissbau.ch/de/c/wie-kann-die-bauwirtschaft-die-treibhausgasemissionen-senken.44328',
+              year: 0,
             },
             {
-              name: 'Notebooks',
-              co2_eq: 296000000 / numInhabitants2022,
+              name: 'Spare Time and Culture, e.g. Pets, Fitness, Magazines, Cinema, Entertainment Devices, etc.',
+              co2_eq: 740,
               category: Category.Consumption,
-              source:
-                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
-              year: 2022,
+              source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+              year: 0,
             },
             {
-              name: 'Smartphones',
-              co2_eq: 162000000 / numInhabitants2022,
+              name: 'Restaurants and Hotels',
+              co2_eq: 680,
               category: Category.Consumption,
-              source:
-                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
-              year: 2022,
+              source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+              year: 0,
             },
             {
-              name: 'Washing Machines',
-              co2_eq: 63000000 / numInhabitants2022,
+              name: 'Other Consumption, e.g. Hygiene Products, Cosmetics, Medication, Education, etc.',
+              co2_eq: 480,
               category: Category.Consumption,
-              source:
-                'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
-              year: 2022,
+              source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+              year: 0,
             },
+            {
+              name: 'Clothing and Shoes',
+              co2_eq: 330,
+              category: Category.Consumption,
+              source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+              year: 0,
+            },
+            // {
+            //   name: 'Clothing',
+            //   co2_eq: 3468000000 / numInhabitants2022,
+            //   category: Category.Consumption,
+            //   source:
+            //     'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+            //   year: 2022,
+            // },
+            // {
+            //   name: 'Furniture',
+            //   co2_eq: 643000000 / numInhabitants2022,
+            //   category: Category.Consumption,
+            //   source:
+            //     'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+            //   year: 2022,
+            // },
+            // {
+            //   name: 'Notebooks',
+            //   co2_eq: 296000000 / numInhabitants2022,
+            //   category: Category.Consumption,
+            //   source:
+            //     'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+            //   year: 2022,
+            // },
+            // {
+            //   name: 'Smartphones',
+            //   co2_eq: 162000000 / numInhabitants2022,
+            //   category: Category.Consumption,
+            //   source:
+            //     'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+            //   year: 2022,
+            // },
+            // {
+            //   name: 'Washing Machines',
+            //   co2_eq: 63000000 / numInhabitants2022,
+            //   category: Category.Consumption,
+            //   source:
+            //     'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+            //   year: 2022,
+            // },
           ],
         },
         {
@@ -270,7 +326,8 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Meat and Fish',
-              co2_eq: meatFishSum - (10.98 + 2.17) * 13.3 - 20.7 * 3.4 - 14.99 * 3.4,
+              co2_eq:
+                meatFishSum - (10.98 + 2.17) * 13.3 - 20.7 * 3.4 - 14.99 * 3.4,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
@@ -331,7 +388,14 @@ export class FootprintSunburstChartComponent implements OnInit {
             {
               // TODO: milkCheeseEggsSum seems to be too small compared to the sum of the children.
               name: 'Milk, Cheese, Eggs',
-              co2_eq: milkCheeseEggsSum - 22.9 * 8.5 - 5.3 * 23.8 - 46.0 * 1.4 - 7.78 * 7.6 - 185.6 * 0.06 * 2.0 - 15.3 * 1.2,
+              co2_eq:
+                milkCheeseEggsSum -
+                22.9 * 8.5 -
+                5.3 * 23.8 -
+                46.0 * 1.4 -
+                7.78 * 7.6 -
+                185.6 * 0.06 * 2.0 -
+                15.3 * 1.2,
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
