@@ -48,7 +48,7 @@ const numInhabitants2022: number = 8815400;
 export class FootprintSunburstChartComponent implements OnInit {
   @ViewChild('chart', { static: true }) chart!: ElementRef;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     const sbdata = {
@@ -329,7 +329,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
               children: [
                 {
                   name: 'Beef and Veal',
@@ -363,7 +363,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
               children: [
                 {
                   name: 'Red Wine',
@@ -397,7 +397,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
               children: [
                 {
                   name: 'Cheese',
@@ -458,7 +458,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
             },
             {
               name: 'Grains',
@@ -466,7 +466,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
             },
             {
               name: 'Transport, Distribution, Packaging',
@@ -474,7 +474,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
             },
             {
               name: 'Vegetables and Fruits',
@@ -482,7 +482,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
             },
             {
               name: 'Vegetable Protein',
@@ -490,7 +490,7 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Nutrition,
               source:
                 'https://www.wwf.ch/sites/default/files/doc-2022-01/2021_Faktenblatt_Ern%C3%A4hrung_DE.pdf',
-              year: 2022,
+              year: 2017,
             },
           ],
         },
@@ -511,7 +511,7 @@ export class FootprintSunburstChartComponent implements OnInit {
       .height(900)
       .showLabels(true)
       .tooltipContent((d, node) => `CO2-eq: <i>${node.value}</i>`)(
-      this.chart.nativeElement
-    );
+        this.chart.nativeElement
+      );
   }
 }
