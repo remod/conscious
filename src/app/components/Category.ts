@@ -1,3 +1,5 @@
+import { Color } from './Color';
+
 export enum Category {
   Mobility = 'Mobility',
   Consumption = 'Consumption (non Food)',
@@ -7,9 +9,9 @@ export enum Category {
 }
 
 export const categoryColor = {
-  [Category.Mobility]: '#327373',
-  [Category.Consumption]: '#F2B337',
-  [Category.Housing]: '#F29D35',
-  [Category.Nutrition]: '#F25430',
-  [Category.PublicServices]: '#F22929',
+  [Category.Mobility]: Color.Color1,
+  [Category.Consumption]: Color.Color2,
+  [Category.Housing]: Color.Color3,
+  [Category.Nutrition]: Color.Color4,
+  [Category.PublicServices]: Color.Color5,
 };
