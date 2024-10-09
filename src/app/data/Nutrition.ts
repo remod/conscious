@@ -215,3 +215,58 @@ export const milk_products_bought: MilkProductsWeightDataSource = {
     },
   },
 };
+
+interface NutritionDataSource extends DataSource {
+  data_points: {
+    beef: DataPoint;
+    pork: DataPoint;
+    chicken: DataPoint;
+    wine: DataPoint;
+    cheese: DataPoint;
+    butter: DataPoint;
+    milk: DataPoint;
+    eggs: DataPoint;
+  }
+}
+
+export const nutrition: NutritionDataSource = {
+  name: 'Nutrition',
+  unit: 'kg CO2-eq / kg',
+  source: 'https://www.ifeu.de/fileadmin/uploads/Reinhardt-Gaertner-Wagner-2020-Oekologische-Fu%C3%9Fabdruecke-von-Lebensmitteln-und-Gerichten-in-Deutschland-ifeu-2020.pdf',
+  year: 2020,
+  data_points:
+  {
+    beef: {
+      name: 'Beef',
+      value: 13.6,
+    },
+    pork: {
+      name: 'Pork',
+      value: 4.6,
+    },
+    chicken: {
+      name: 'Chicken',
+      value: 5.5,
+    },
+    wine: {
+      name: 'Wine',
+      value: 1.0,
+    },
+    cheese: {
+      name: 'Cheese',
+      value: 5.7,
+    },
+    butter: {
+      name: 'Butter',
+      value: 9.0,
+    },
+    milk: {
+      name: 'Milk',
+      value: 1.4,
+    },
+    eggs: {
+      name: 'Eggs',
+      value: 3.0,
+    },
+  },
+};

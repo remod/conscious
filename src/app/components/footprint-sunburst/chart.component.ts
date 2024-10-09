@@ -15,6 +15,7 @@ import {
   food_waste_fractions,
   meat_bought,
   milk_products_bought,
+  nutrition,
   nutrition_fractions,
 } from '../../data/Nutrition';
 
@@ -190,25 +191,33 @@ export class FootprintSunburstChartComponent implements OnInit {
               co2_eq:
                 meat_fish -
                 food_waste_fractions.data_points.consumed_food.value *
-                (meat_bought.data_points.beef.value + meat_bought.data_points.veal.value) * 13.3 -
-                food_waste_fractions.data_points.consumed_food.value * meat_bought.data_points.pork.value * 3.4 -
-                food_waste_fractions.data_points.consumed_food.value * meat_bought.data_points.chicken.value * 3.4,
+                (meat_bought.data_points.beef.value + meat_bought.data_points.veal.value) * nutrition.data_points.beef.value -
+                food_waste_fractions.data_points.consumed_food.value * meat_bought.data_points.pork.value * nutrition.data_points.pork.value -
+                food_waste_fractions.data_points.consumed_food.value * meat_bought.data_points.chicken.value * nutrition.data_points.chicken.value,
               category: Category.Nutrition,
               children: [
                 {
                   name: 'Beef and Veal',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value *
-                    (meat_bought.data_points.beef.value + meat_bought.data_points.veal.value) * 13.3,
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value *
+                    (meat_bought.data_points.beef.value + meat_bought.data_points.veal.value) *
+                    nutrition.data_points.beef.value,
                   category: Category.Nutrition,
                 },
                 {
                   name: 'Pork',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value * meat_bought.data_points.pork.value * 3.4,
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value *
+                    meat_bought.data_points.pork.value *
+                    nutrition.data_points.pork.value,
                   category: Category.Nutrition,
                 },
                 {
                   name: 'Chicken',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value * meat_bought.data_points.chicken.value * 3.4,
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value *
+                    meat_bought.data_points.chicken.value *
+                    nutrition.data_points.chicken.value,
                   category: Category.Nutrition,
                 },
               ],
@@ -217,13 +226,15 @@ export class FootprintSunburstChartComponent implements OnInit {
               name: 'Beverages',
               co2_eq:
                 beverages -
-                food_waste_fractions.data_points.consumed_food.value * 17.42 * 2.3 -
-                food_waste_fractions.data_points.consumed_food.value * 9.49 * 2.4,
+                food_waste_fractions.data_points.consumed_food.value * 17.42 * nutrition.data_points.wine.value -
+                food_waste_fractions.data_points.consumed_food.value * 9.49 * nutrition.data_points.wine.value,
               category: Category.Nutrition,
               children: [
                 {
                   name: 'Red Wine',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value * 17.42 * 2.3,
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value * 17.42 *
+                    nutrition.data_points.wine.value,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -231,7 +242,9 @@ export class FootprintSunburstChartComponent implements OnInit {
                 },
                 {
                   name: 'White Wine',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value * 9.49 * 2.4,
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value * 9.49 *
+                    nutrition.data_points.wine.value,
                   category: Category.Nutrition,
                   source:
                     'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
@@ -244,25 +257,34 @@ export class FootprintSunburstChartComponent implements OnInit {
               name: 'Milk, Cheese, Eggs',
               co2_eq:
                 milk_cheese_eggs -
-                food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.cheese.value * 8.5 -
-                food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.butter.value * 23.8 -
-                food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.milk.value * 1.4 -
-                food_waste_fractions.data_points.consumed_food.value * eggs_bought.data_points.eggs.value * product_weight.data_points.eggs.value * 2.0,
+                food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.cheese.value * nutrition.data_points.cheese.value -
+                food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.butter.value * nutrition.data_points.butter.value -
+                food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.milk.value * nutrition.data_points.milk.value -
+                food_waste_fractions.data_points.consumed_food.value * eggs_bought.data_points.eggs.value * product_weight.data_points.eggs.value * nutrition.data_points.eggs.value,
               category: Category.Nutrition,
               children: [
                 {
                   name: 'Cheese',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.cheese.value * 8.5,
-                  category: Category.Nutrition,
-                },
-                {
-                  name: 'Butter',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.butter.value * 23.8,
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value *
+                    milk_products_bought.data_points.cheese.value *
+                    nutrition.data_points.cheese.value,
                   category: Category.Nutrition,
                 },
                 {
                   name: 'Milk',
-                  co2_eq: food_waste_fractions.data_points.consumed_food.value * milk_products_bought.data_points.milk.value * 1.4,
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value *
+                    milk_products_bought.data_points.milk.value *
+                    nutrition.data_points.milk.value,
+                  category: Category.Nutrition,
+                },
+                {
+                  name: 'Butter',
+                  co2_eq:
+                    food_waste_fractions.data_points.consumed_food.value *
+                    milk_products_bought.data_points.butter.value *
+                    nutrition.data_points.butter.value,
                   category: Category.Nutrition,
                 },
                 {
