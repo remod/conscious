@@ -8,7 +8,7 @@ import {
   ApexPlotOptions,
   NgApexchartsModule,
 } from 'ng-apexcharts';
-import { DataSource, DataPoint } from '../DataInterfaces';
+import { DataSource, DataPoint } from '../../data/Interfaces';
 
 interface HeatingDataSource extends DataSource {
   data_points: {

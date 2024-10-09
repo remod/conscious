@@ -4,17 +4,19 @@ import { DataNode } from 'sunburst-chart';
 import { Category, categoryColor } from '../Category';
 import {
   consumption,
-  eggs_bought,
-  product_weight,
-  food_waste_fractions,
   footprint,
   ground_transport_fractions,
   heating,
+  mobility_fractions,
+} from '../../data/Data';
+import {
+  eggs_bought,
+  product_weight,
+  food_waste_fractions,
   meat_bought,
   milk_products_bought,
-  mobility_fractions,
   nutrition_fractions,
-} from '../Data';
+} from '../../data/Nutrition';
 
 const airplane: number = footprint.data_points.mobility.value * mobility_fractions.data_points.airplane.value;
 const ground: number = footprint.data_points.mobility.value * mobility_fractions.data_points.ground.value;
