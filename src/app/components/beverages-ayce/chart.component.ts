@@ -9,618 +9,262 @@ import {
   NgApexchartsModule,
 } from 'ng-apexcharts';
 import { NutritionCategory, nutritionCategoryColor } from '../NutritionCategory';
+import { nutrition_ayce } from '../../data/NutritionAyce';
 
-export type Emission = {
-  co2_eq: number;
-  source: string;
-  year: number;
-};
-
-export type Product = {
-  name: string;
-  emission: Emission[];
-  category: NutritionCategory;
-};
-
-const data: Product[] = [
+const data: { name: string; co2_eq: number; category: NutritionCategory }[] = [
   {
-    name: 'Wasser',
-    emission: [
-      {
-        co2_eq: 0.002,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.water.name,
+    co2_eq: nutrition_ayce.data_points.water.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Erbsen',
-    emission: [
-      {
-        co2_eq: 118,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.peas.name,
+    co2_eq: nutrition_ayce.data_points.peas.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Kartoffeln',
-    emission: [
-      {
-        co2_eq: 144,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
-    category: NutritionCategory.Carbohydrates,
+    name: nutrition_ayce.data_points.potatoes.name,
+    co2_eq: nutrition_ayce.data_points.potatoes.value,
+    category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Margarine',
-    emission: [
-      {
-        co2_eq: 157,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.margarine.name,
+    co2_eq: nutrition_ayce.data_points.margarine.value,
     category: NutritionCategory.FatAndOil,
   },
   {
-    name: 'Kürbis',
-    emission: [
-      {
-        co2_eq: 181,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.pumpkin.name,
+    co2_eq: nutrition_ayce.data_points.pumpkin.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Spinat',
-    emission: [
-      {
-        co2_eq: 182,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.spinach.name,
+    co2_eq: nutrition_ayce.data_points.spinach.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Linsen',
-    emission: [
-      {
-        co2_eq: 186,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
-    category: NutritionCategory.Carbohydrates,
+    name: nutrition_ayce.data_points.lentils.name,
+    co2_eq: nutrition_ayce.data_points.lentils.value,
+    category: NutritionCategory.Proteins
   },
   {
-    name: 'Nüsse',
-    emission: [
-      {
-        co2_eq: 220,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.nuts.name,
+    co2_eq: nutrition_ayce.data_points.nuts.value,
     category: NutritionCategory.FatAndOil,
   },
   {
-    name: 'Pasta',
-    emission: [
-      {
-        co2_eq: 247,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.pasta.name,
+    co2_eq: nutrition_ayce.data_points.pasta.value,
     category: NutritionCategory.Carbohydrates,
   },
   {
-    name: 'Schwarztee',
-    emission: [
-      {
-        co2_eq: 265,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.black_tea.name,
+    co2_eq: nutrition_ayce.data_points.black_tea.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Karotten',
-    emission: [
-      {
-        co2_eq: 295,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.carrots.name,
+    co2_eq: nutrition_ayce.data_points.carrots.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Erbsenbasierter Fleischersatz',
-    emission: [
-      {
-        co2_eq: 299,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.pea_based_meat_substitute.name,
+    co2_eq: nutrition_ayce.data_points.pea_based_meat_substitute.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Äpfel',
-    emission: [
-      {
-        co2_eq: 323,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.apples.name,
+    co2_eq: nutrition_ayce.data_points.apples.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Brot',
-    emission: [
-      {
-        co2_eq: 343,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.bread.name,
+    co2_eq: nutrition_ayce.data_points.bread.value,
     category: NutritionCategory.Carbohydrates,
   },
   {
-    name: 'Hafermilch',
-    emission: [
-      {
-        co2_eq: 367,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.oat_milk.name,
+    co2_eq: nutrition_ayce.data_points.oat_milk.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Makrele',
-    emission: [
-      {
-        co2_eq: 385,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.mackerel.name,
+    co2_eq: nutrition_ayce.data_points.mackerel.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Bananen',
-    emission: [
-      {
-        co2_eq: 409,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.bananas.name,
+    co2_eq: nutrition_ayce.data_points.bananas.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Erdbeeren',
-    emission: [
-      {
-        co2_eq: 423,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.strawberries.name,
+    co2_eq: nutrition_ayce.data_points.strawberries.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Dunkle Schokolade',
-    emission: [
-      {
-        co2_eq: 437,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.dark_chocolate.name,
+    co2_eq: nutrition_ayce.data_points.dark_chocolate.value,
     category: NutritionCategory.FatAndOil,
   },
   {
-    name: 'Avocado',
-    emission: [
-      {
-        co2_eq: 457,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.avocado.name,
+    co2_eq: nutrition_ayce.data_points.avocado.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Gurken',
-    emission: [
-      {
-        co2_eq: 501,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.cucumbers.name,
+    co2_eq: nutrition_ayce.data_points.cucumbers.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Rispentomaten',
-    emission: [
-      {
-        co2_eq: 505,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.tomatoes.name,
+    co2_eq: nutrition_ayce.data_points.tomatoes.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Steinpilze',
-    emission: [
-      {
-        co2_eq: 617,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.porcini_mushrooms.name,
+    co2_eq: nutrition_ayce.data_points.porcini_mushrooms.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Apfelsaft',
-    emission: [
-      {
-        co2_eq: 621,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.apple_juice.name,
+    co2_eq: nutrition_ayce.data_points.apple_juice.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Orangen',
-    emission: [
-      {
-        co2_eq: 626,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.oranges.name,
+    co2_eq: nutrition_ayce.data_points.oranges.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Tofu',
-    emission: [
-      {
-        co2_eq: 643,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.tofu.name,
+    co2_eq: nutrition_ayce.data_points.tofu.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Milchschokolade',
-    emission: [
-      {
-        co2_eq: 650,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.milk_chocolate.name,
+    co2_eq: nutrition_ayce.data_points.milk_chocolate.value,
     category: NutritionCategory.FatAndOil,
   },
   {
-    name: 'Bier',
-    emission: [
-      {
-        co2_eq: 770,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.beer.name,
+    co2_eq: nutrition_ayce.data_points.beer.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Kaffee',
-    emission: [
-      {
-        co2_eq: 868,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.coffee.name,
+    co2_eq: nutrition_ayce.data_points.coffee.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Hühnerfleisch',
-    emission: [
-      {
-        co2_eq: 894,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.chicken.name,
+    co2_eq: nutrition_ayce.data_points.chicken.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Eier',
-    emission: [
-      {
-        co2_eq: 923,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.eggs.name,
+    co2_eq: nutrition_ayce.data_points.eggs.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Reis',
-    emission: [
-      {
-        co2_eq: 933,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.rice.name,
+    co2_eq: nutrition_ayce.data_points.rice.value,
     category: NutritionCategory.Carbohydrates,
   },
   {
-    name: 'Aubergine (saisonal)',
-    emission: [
-      {
-        co2_eq: 983,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.aubergine_season_local.name,
+    co2_eq: nutrition_ayce.data_points.aubergine_season_local.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Thunfisch',
-    emission: [
-      {
-        co2_eq: 1035,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.tuna.name,
+    co2_eq: nutrition_ayce.data_points.tuna.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Käse',
-    emission: [
-      {
-        co2_eq: 1300,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
-    category: NutritionCategory.Proteins,
-  },
-  {
-    name: 'Datteln',
-    emission: [
-      {
-        co2_eq: 1349,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
-    category: NutritionCategory.VegetableAndFruit,
-  },
-  {
-    name: 'Grüne Spargeln',
-    emission: [
-      {
-        co2_eq: 1368,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
-    category: NutritionCategory.VegetableAndFruit,
-  },
-  {
-    name: 'Butter',
-    emission: [
-      {
-        co2_eq: 1384,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.cheese.name,
+    co2_eq: nutrition_ayce.data_points.cheese.value,
     category: NutritionCategory.FatAndOil,
   },
   {
-    name: 'Milch',
-    emission: [
-      {
-        co2_eq: 1554,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
-    category: NutritionCategory.Beverage,
-  },
-  {
-    name: 'Aubergine (Mai, Spanien, per LKW)',
-    emission: [
-      {
-        co2_eq: 1632,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.dates.name,
+    co2_eq: nutrition_ayce.data_points.dates.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Pommes Frites',
-    emission: [
-      {
-        co2_eq: 1739,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.green_asparagus.name,
+    co2_eq: nutrition_ayce.data_points.green_asparagus.value,
+    category: NutritionCategory.VegetableAndFruit,
+  },
+  {
+    name: nutrition_ayce.data_points.butter.name,
+    co2_eq: nutrition_ayce.data_points.butter.value,
+    category: NutritionCategory.FatAndOil,
+  },
+  {
+    name: nutrition_ayce.data_points.milk.name,
+    co2_eq: nutrition_ayce.data_points.milk.value,
+    category: NutritionCategory.Beverage,
+  },
+  {
+    name: nutrition_ayce.data_points.pork.name,
+    co2_eq: nutrition_ayce.data_points.pork.value,
+    category: NutritionCategory.Proteins,
+  },
+  {
+    name: nutrition_ayce.data_points.aubergine_offseason_spain.name,
+    co2_eq: nutrition_ayce.data_points.aubergine_offseason_spain.value,
+    category: NutritionCategory.VegetableAndFruit,
+  },
+  {
+    name: nutrition_ayce.data_points.french_fries.name,
+    co2_eq: nutrition_ayce.data_points.french_fries.value,
     category: NutritionCategory.Carbohydrates,
   },
   {
-    name: 'Lachs',
-    emission: [
-      {
-        co2_eq: 1757,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.salmon.name,
+    co2_eq: nutrition_ayce.data_points.salmon.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Naturjoghurt',
-    emission: [
-      {
-        co2_eq: 1867,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.natural_yogurt.name,
+    co2_eq: nutrition_ayce.data_points.natural_yogurt.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Orangensaft',
-    emission: [
-      {
-        co2_eq: 2248,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.orange_juice.name,
+    co2_eq: nutrition_ayce.data_points.orange_juice.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Champignons',
-    emission: [
-      {
-        co2_eq: 2343,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.mushrooms.name,
+    co2_eq: nutrition_ayce.data_points.mushrooms.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Wein',
-    emission: [
-      {
-        co2_eq: 2359,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.wine.name,
+    co2_eq: nutrition_ayce.data_points.wine.value,
     category: NutritionCategory.Beverage,
   },
   {
-    name: 'Aubergine (Mai, Deutschland)',
-    emission: [
-      {
-        co2_eq: 2465,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.aubergine_offseason_local.name,
+    co2_eq: nutrition_ayce.data_points.aubergine_offseason_local.value,
     category: NutritionCategory.VegetableAndFruit,
   },
   {
-    name: 'Rindfleisch',
-    emission: [
-      {
-        co2_eq: 5003,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.beef.name,
+    co2_eq: nutrition_ayce.data_points.beef.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Kalbfleisch',
-    emission: [
-      {
-        co2_eq: 7925,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.veal.name,
+    co2_eq: nutrition_ayce.data_points.veal.value,
     category: NutritionCategory.Proteins,
   },
   {
-    name: 'Aubergine (Mai, Thailand, per Flugzeug)',
-    emission: [
-      {
-        co2_eq: 13682,
-        source:
-          'https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf',
-        year: 2022,
-      },
-    ],
+    name: nutrition_ayce.data_points.aubergine_offseason_thailand.name,
+    co2_eq: nutrition_ayce.data_points.aubergine_offseason_thailand.value,
     category: NutritionCategory.VegetableAndFruit,
   },
 ];
@@ -652,9 +296,7 @@ export class BeveragesAyceChartComponent {
           name: 'basic',
           // Average emission.
           data: data.map(
-            (d) =>
-              d.emission.reduce((acc, curr) => acc + curr.co2_eq, 0) /
-              d.emission.length
+            (d) => d.co2_eq
           ),
         },
       ],
