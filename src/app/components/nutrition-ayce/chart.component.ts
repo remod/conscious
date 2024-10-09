@@ -280,12 +280,12 @@ type ChartOptions = {
 
 @Component({
   imports: [NgApexchartsModule],
-  selector: 'beverages-ayce-chart',
+  selector: 'nutrition-ayce-chart',
   standalone: true,
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css'],
 })
-export class BeveragesAyceChartComponent {
+export class NutritionAyceChartComponent {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
