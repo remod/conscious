@@ -8,49 +8,68 @@ import {
   ApexPlotOptions,
   NgApexchartsModule,
 } from 'ng-apexcharts';
+import { DataSource, DataPoint } from '../DataInterfaces';
 
-export type Data = {
-  name: string;
-  co2_eq: number;
-  source: string;
-  year: number;
+interface HeatingDataSource extends DataSource {
+  data_points: {
+    water_heat_pump: DataPoint;
+    air_heat_pump: DataPoint;
+    wood_pellets: DataPoint;
+    gas: DataPoint;
+    oil: DataPoint;
+  }
+}
+
+const heating: HeatingDataSource = {
+  name: 'Heating',
+  unit: 'kg CO2-eq',
+  source: 'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
+  // Looked up in 2024, but there is no year indicated.
+  year: 0,
+  data_points: {
+    water_heat_pump: {
+      name: 'Water Heat Pump',
+      value: 380,
+    },
+    air_heat_pump: {
+      name: 'Air Heat Pump',
+      value: 490,
+    },
+    wood_pellets: {
+      name: 'Wood Pellets',
+      value: 710,
+    },
+    gas: {
+      name: 'Gas',
+      value: 3650,
+    },
+    oil: {
+      name: 'Oil',
+      value: 4680,
+    },
+  },
 };
 
-const data: Data[] = [
+const data: { name: string; co2_eq: number }[] = [
   {
     name: 'Water Heat Pump',
-    co2_eq: 380,
-    source:
-      'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
-    year: 0,
+    co2_eq: heating.data_points.water_heat_pump.value,
   },
   {
     name: 'Air Heat Pump',
-    co2_eq: 490,
-    source:
-      'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
-    year: 0,
+    co2_eq: heating.data_points.air_heat_pump.value,
   },
   {
     name: 'Wood Pellets',
-    co2_eq: 710,
-    source:
-      'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
-    year: 0,
+    co2_eq: heating.data_points.wood_pellets.value,
   },
   {
     name: 'Gas',
-    co2_eq: 3650,
-    source:
-      'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
-    year: 0,
+    co2_eq: heating.data_points.gas.value,
   },
   {
     name: 'Oil',
-    co2_eq: 4680,
-    source:
-      'https://www.wwf.ch/de/unsere-ziele/gebaeudesanierung-und-heizsysteme',
-    year: 0,
+    co2_eq: heating.data_points.oil.value,
   },
 ];
 
