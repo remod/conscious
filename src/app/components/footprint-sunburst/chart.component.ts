@@ -293,7 +293,7 @@ export class FootprintSunburstChartComponent implements OnInit {
                     food_waste_fractions.data_points.consumed_food.value *
                     eggs_bought.data_points.eggs.value *
                     product_weight.data_points.eggs.value *
-                    2.0,
+                    nutrition.data_points.eggs.value,
                   category: Category.Nutrition,
                 },
               ],
