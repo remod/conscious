@@ -5,6 +5,7 @@ import { Category, categoryColor } from '../Category';
 import {
   consumption,
   footprint,
+  footprint_sum,
   ground_transport_fractions,
   heating,
   mobility_fractions,
@@ -46,6 +47,30 @@ interface Data extends DataNode {
   category: Category;
 }
 
+function print_angles(node: any, level: number = 0, starting_angle: number = 270): number {
+  let child_starting_angle: number = starting_angle;
+  let angle: number = node.co2_eq / footprint_sum * 360;
+  if (node.children) {
+    for (const child of node.children) {
+      child_starting_angle = print_angles(child, level + 1, child_starting_angle);
+    }
+  }
+  let indentation: string = "  ".repeat(level);
+  let ending_angle: number = (child_starting_angle + angle) % 360;
+  console.log(
+    indentation,
+    node.name,
+    angle.toFixed(1),
+    "from:",
+    starting_angle.toFixed(1),
+    "to:",
+    ending_angle.toFixed(1),
+    "to (gap):",
+    (ending_angle - 1).toFixed(1),
+  );
+  return ending_angle;
+}
+
 @Component({
   selector: 'footprint-sunburst-chart',
   templateUrl: './chart.component.html',
@@ -59,7 +84,8 @@ export class FootprintSunburstChartComponent implements OnInit {
 
   ngOnInit() {
     const sbdata = {
-      name: '',
+      name: 'Footprint',
+      co2_eq: 0,
       color: 'white',
       children: [
         {
@@ -339,8 +365,11 @@ export class FootprintSunburstChartComponent implements OnInit {
       .color((d) => categoryColor[(d as Data).category] || 'lightgrey')
       .height(900)
       .showLabels(true)
+      .radiusScaleExponent(1)
       .tooltipContent((d, node) => `CO2-eq: <i>${node.value}</i>`)(
         this.chart.nativeElement
       );
+
+    print_angles(sbdata);
   }
 }

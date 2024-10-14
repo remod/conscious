@@ -72,6 +72,8 @@ export const footprint: FootprintDataSource = {
   },
 };
 
+export const footprint_sum = Object.values(footprint.data_points).reduce((sum, data_point) => sum + data_point.value, 0);
+
 interface MobilityFractionsDataSource extends DataSource {
   data_points: {
     airplane: DataPoint;
