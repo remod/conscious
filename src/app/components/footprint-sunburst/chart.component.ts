@@ -57,6 +57,24 @@ function print_angles(node: any, level: number = 0, starting_angle: number = 270
   }
   let indentation: string = "  ".repeat(level);
   let ending_angle: number = (child_starting_angle + angle) % 360;
+  let gap: number;
+  switch (level) {
+    case 0:
+      gap = 0;
+      break;
+    case 1:
+      gap = 1.0;
+      break;
+    case 2:
+      gap = 0.7;
+      break;
+    case 3:
+      gap = 0.5;
+      break;
+    default:
+      gap = 0;
+      break;
+  }
   console.log(
     indentation,
     node.name,
@@ -66,7 +84,7 @@ function print_angles(node: any, level: number = 0, starting_angle: number = 270
     "to:",
     ending_angle.toFixed(1),
     "to (gap):",
-    (ending_angle - 1).toFixed(1),
+    (ending_angle - gap).toFixed(1),
   );
   return ending_angle;
 }
