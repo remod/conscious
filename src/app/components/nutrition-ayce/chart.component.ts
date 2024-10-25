@@ -290,6 +290,9 @@ export class NutritionAyceChartComponent {
   public chartOptions: Partial<ChartOptions>;
 
   constructor() {
+    for (const item of data) {
+      console.log(item.name, item.category, "diameter: ", (Math.sqrt(item.co2_eq) / 3).toFixed(1));
+    }
     this.chartOptions = {
       series: [
         {
