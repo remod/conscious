@@ -145,6 +145,9 @@ export class SavingsChartComponent {
   public chartOptions: ApexOptions;
 
   constructor() {
+    for (const item of data) {
+      console.log(item.name, item.category, "length: ", (item.co2_eq / 12).toFixed(1));
+    }
     this.chartOptions = {
       series: [
         {
