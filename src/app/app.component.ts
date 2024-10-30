@@ -10,7 +10,6 @@ import { HeatingChartComponent } from './components/heating/chart.component';
 import { NutritionAltChartComponent } from './components/nutrition-alt/nutrition-chart.component';
 import { NutritionChartComponent } from './components/nutrition/nutrition-chart.component';
 import { SavingsChartComponent } from './components/savings/savings-chart.component';
-import { TransportationAltChartComponent } from './components/transportation-alt/transportation-chart.component';
 import { TransportationChartComponent } from './components/transportation/transportation-chart.component';
 
 @Component({
@@ -28,7 +27,6 @@ import { TransportationChartComponent } from './components/transportation/transp
     NutritionChartComponent,
     RouterOutlet,
     SavingsChartComponent,
-    TransportationAltChartComponent,
     TransportationChartComponent,
   ],
   templateUrl: './app.component.html',

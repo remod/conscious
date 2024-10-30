@@ -27,6 +27,45 @@ export const food_waste_fractions: FoodWasteFractionsDataSource = {
   },
 };
 
+interface DietFractionsDataSource extends DataSource {
+  data_points: {
+    standard: DataPoint;
+    vegan: DataPoint;
+    vegetarian: DataPoint;
+    flexitarian: DataPoint;
+  }
+}
+
+export const diet_fractions: DietFractionsDataSource = {
+  name: 'Diet Fractions',
+  unit: '% of CO2-eq',
+  source: 'https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf',
+  year: 2015,
+  data_points:
+  {
+    standard:
+    {
+      name: 'Standard',
+      value: 1.0,
+    },
+    vegan:
+    {
+      name: 'Vegan',
+      value: 0.6,
+    },
+    vegetarian:
+    {
+      name: 'Vegetarian',
+      value: 0.7,
+    },
+    flexitarian:
+    {
+      name: 'Flexitarian',
+      value: 0.85,
+    },
+  },
+};
+
 interface NutritionFractionsDataSource extends DataSource {
   data_points: {
     meat_fish: DataPoint;

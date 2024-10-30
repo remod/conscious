@@ -7,7 +7,7 @@ import {
   footprint,
   footprint_sum,
   ground_transport_fractions,
-  heating,
+  average_heating,
   mobility_fractions,
 } from '../../data/Data';
 import {
@@ -192,8 +192,9 @@ export class FootprintSunburstChartComponent implements OnInit {
         },
         {
           name: 'Housing and Energy',
+          // Assumption: We ignore the grey energy of the heater itself.
           co2_eq:
-            footprint.data_points.housing.value - heating.data_points.oil.value - heating.data_points.gas.value - heating.data_points.others.value,
+            footprint.data_points.housing.value - average_heating.data_points.oil.value - average_heating.data_points.gas.value - average_heating.data_points.others.value,
           category: Category.Housing,
           children: [
             {
@@ -203,17 +204,17 @@ export class FootprintSunburstChartComponent implements OnInit {
               children: [
                 {
                   name: 'Oil',
-                  co2_eq: heating.data_points.oil.value,
+                  co2_eq: average_heating.data_points.oil.value,
                   category: Category.Housing,
                 },
                 {
                   name: 'Gas',
-                  co2_eq: heating.data_points.gas.value,
+                  co2_eq: average_heating.data_points.gas.value,
                   category: Category.Housing,
                 },
                 {
                   name: 'Others',
-                  co2_eq: heating.data_points.others.value,
+                  co2_eq: average_heating.data_points.others.value,
                   category: Category.Housing,
                 },
               ],

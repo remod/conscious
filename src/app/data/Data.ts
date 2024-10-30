@@ -27,6 +27,27 @@ export const population: PopulationDataSource = {
   },
 };
 
+interface HouseholdSizeDataSource extends DataSource {
+  data_points: {
+    at2022: DataPoint;
+  }
+}
+
+export const household_size: HouseholdSizeDataSource = {
+  name: 'Household Size',
+  unit: '-',
+  source: 'https://www.bfs.admin.ch/news/de/2022-0544',
+  year: 2022,
+  data_points:
+  {
+    at2022:
+    {
+      name: 'At 2022',
+      value: 2.19,
+    },
+  },
+};
+
 interface FootprintDataSource extends DataSource {
   data_points: {
     mobility: DataPoint;
@@ -160,6 +181,87 @@ export const ground_transport_fractions: GroundTransportDataSource = {
   },
 };
 
+interface TransportEfficiencyDataSource extends DataSource {
+  data_points: {
+    plane: DataPoint;
+    fossil_car: DataPoint;
+    hybrid_car: DataPoint;
+    electric_car_ch: DataPoint;
+    electric_car_eco: DataPoint;
+    bus: DataPoint;
+    train_neighbor_countries_avg: DataPoint;
+    public_transport_avg: DataPoint;
+    e_bike: DataPoint;
+    bike: DataPoint;
+    train_ch: DataPoint;
+  }
+}
+
+export const transport_efficiency: TransportEfficiencyDataSource = {
+  name: 'Transport Efficiency',
+  unit: 'g CO2-eq / km / person',
+  source: 'https://www.wwf.ch/de/nachhaltig-leben/mein-fussabdruck-mobilitaet',
+  year: 2021, // 2022 ESU-services, 2020 Mobitool
+  data_points:
+  {
+    plane:
+    {
+      name: 'Plane',
+      value: 375,
+    },
+    fossil_car:
+    {
+      name: 'Car, gas or diesel',
+      value: 222,
+    },
+    hybrid_car:
+    {
+      name: 'Car, hybrid',
+      value: 171,
+    },
+    electric_car_ch:
+    {
+      name: 'Car, electric, CH electricity',
+      value: 89,
+    },
+    electric_car_eco:
+    {
+      name: 'Car, electric, eco electricity',
+      value: 75,
+    },
+    bus:
+    {
+      name: 'Bus',
+      value: 62,
+    },
+    train_neighbor_countries_avg:
+    {
+      name: 'Train (avg. DE, FR, AT, IT)',
+      value: 42,
+    },
+    public_transport_avg:
+    {
+      name: 'Public Transport avg. CH',
+      value: 25,
+    },
+    e_bike:
+    {
+      name: 'E-bike',
+      value: 14,
+    },
+    bike:
+    {
+      name: 'Bicycle',
+      value: 8,
+    },
+    train_ch:
+    {
+      name: 'Train, CH',
+      value: 7,
+    },
+  },
+};
+
 interface ConsumptionDataSource extends DataSource {
   data_points: {
     furniture_household_devices: DataPoint;
@@ -211,7 +313,61 @@ export const consumption: ConsumptionDataSource = {
   },
 };
 
-interface HeatingDataSource extends DataSource {
+interface ExtendedUsageDataSource extends DataSource {
+  data_points: {
+    smartphone: DataPoint;
+    clothing: DataPoint;
+    furniture: DataPoint;
+  }
+}
+
+export const extended_usage: ExtendedUsageDataSource = {
+  name: 'Extended Usage',
+  unit: 'kg CO2-eq',
+  source: 'https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf',
+  year: 2022,
+  data_points:
+  {
+    smartphone:
+    {
+      name: 'Use Smartphone 5.3 instead of 2.3 Years',
+      value: 91000000 / population.data_points.at2022.value,
+    },
+    clothing:
+    {
+      name: 'Use Clothing 7 instead of 4 Years',
+      value: 1486000000 / population.data_points.at2022.value,
+    },
+    furniture:
+    {
+      name: 'Use Furniture 13.5 instead of 10.5 Years',
+      value: 143000000 / population.data_points.at2022.value,
+    },
+  },
+};
+
+interface RecycleDataSource extends DataSource {
+  data_points: {
+    recycle: DataPoint;
+  }
+}
+
+export const recycle: RecycleDataSource = {
+  name: 'Recycle',
+  unit: 'kg CO2-eq',
+  source: 'https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen',
+  year: 2022,
+  data_points:
+  {
+    recycle:
+    {
+      name: 'Recycle',
+      value: 507000000 / population.data_points.at2022.value,
+    },
+  },
+};
+
+interface AverageHeatingDataSource extends DataSource {
   data_points: {
     oil: DataPoint;
     gas: DataPoint;
@@ -219,9 +375,8 @@ interface HeatingDataSource extends DataSource {
   }
 }
 
-// Assumption: We ignore the grey energy of the heater itself.
-export const heating: HeatingDataSource = {
-  name: 'Heating',
+export const average_heating: AverageHeatingDataSource = {
+  name: 'Average Heating Emissions',
   unit: 'kg CO2-eq',
   source: 'https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html',
   year: 2023,
@@ -241,6 +396,120 @@ export const heating: HeatingDataSource = {
     {
       name: 'Others',
       value: 560000000 / population.data_points.at2023.value,
+    },
+  },
+};
+
+interface HeatingMethodsDataSource extends DataSource {
+  data_points: {
+    oil: DataPoint;
+    gas: DataPoint;
+    pellet: DataPoint;
+    heat_pump: DataPoint;
+    earth_heat: DataPoint;
+  }
+}
+
+export const heating_methods: HeatingMethodsDataSource = {
+  name: 'Heating Methods',
+  unit: 'kg CO2-eq',
+  source: 'https://www.houzy.ch/post/co2-emissionen-von-heizungen',
+  year: 2015,
+  data_points:
+  {
+    oil:
+    {
+      name: 'Oil',
+      value: 4680,
+    },
+    gas:
+    {
+      name: 'Gas',
+      value: 3650,
+    },
+    pellet:
+    {
+      name: 'Pellet',
+      value: 710,
+    },
+    heat_pump:
+    {
+      name: 'Heat Pump',
+      value: 490,
+    },
+    earth_heat:
+    {
+      name: 'Earth Heat',
+      value: 380,
+    },
+  },
+};
+
+interface ShowerSavingsDataSource extends DataSource {
+  data_points: {
+    economy_shower: DataPoint; // = Sparbrause.
+  }
+}
+
+export const shower_savings: ShowerSavingsDataSource = {
+  name: 'Shower Savings',
+  unit: 'kg CO2-eq',
+  source: 'https://duschbrause-co2.ch/fileadmin/ihs_bilder_grafiken/infografik_einsparungen_haushalt.jpg',
+  year: 2023,
+  data_points:
+  {
+    economy_shower:
+    {
+      name: 'Economy Shower',
+      value: 400.0 / 3.0,
+    },
+  },
+};
+
+interface PowerProductionEfficiencyDataSource extends DataSource {
+  data_points: {
+    average: DataPoint;
+    solar: DataPoint;
+  }
+}
+
+export const power_production_efficiency: PowerProductionEfficiencyDataSource = {
+  name: 'Power Production Efficiency',
+  unit: 'kg CO2-eq / kWh',
+  source: 'https://www.swissolar.ch/01_wissen/swissolar-publikationen/branchen-faktenblatt_pv_ch_d.pdf',
+  year: 2020,
+  data_points:
+  {
+    average:
+    {
+      name: 'Average',
+      value: 0.128,
+    },
+    solar:
+    {
+      name: 'Solar',
+      value: 0.042,
+    },
+  },
+};
+
+interface PowerProductionYieldDataSource extends DataSource {
+  data_points: {
+    solar: DataPoint;
+  }
+}
+
+export const power_production_yield: PowerProductionYieldDataSource = {
+  name: 'Power Production Yield',
+  unit: 'kWh / kWp',
+  source: 'https://www.solarenergie.de/photovoltaikanlage/finanzielles/lohnt-sich-photovoltaik/photovoltaik-im-winter',
+  year: 2020,
+  data_points:
+  {
+    solar:
+    {
+      name: 'Solar',
+      value: 900,
     },
   },
 };
