@@ -79,6 +79,10 @@ interface NutritionFractionsDataSource extends DataSource {
   }
 }
 
+// Food waste: 330 kg / year.
+// 2019
+// https://www.wwf.ch/de/unsere-ziele/food-waste
+
 // Assumption: These fractions apply in the same way to consumed food and wasted food.
 export const nutrition_fractions: NutritionFractionsDataSource = {
   name: 'Nutrition Fractions',
