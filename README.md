@@ -10,6 +10,10 @@
 
 ## Website
 
+[This website](https://co2nscious.web.app/) renders previews of the graphs.
+
+### Development
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
 ### Development server
