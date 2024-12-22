@@ -1,18 +1,61 @@
 ![Logo](Logo.png)
 
-# Consume Consciously
+_Consume Consciously_ ist ein Projekt mit dem Ziel, die Problematik des Klimawandels aber auch Lösungsansätze aufzuzeigen.
 
-...
+Der Klimawandel ist heute eine der grössten globalen Herausforderungen.
+Wenn wir es nicht schaffen, unseren Resourcenhunger innert wenigen Jahrzehnten drastisch einzudämmen doht uns und kommenden Generationen fatale ökologische und wirtschaftlich Konsequenzen.
 
-## Poster
+Damit ein so komplexes Problem gelöst werden kann, braucht es zum Einen ausreichende Motiation, zum Anderen aber auch das Wissen, welche Massnahmen wirkungsvoll sind.
+Die [Consume Consciously Infografik](poster/poster.svg) hat zum Ziel, diese Informationen zu bündeln und Motivation und Massnahmen klar aufzuzeigen.
 
-...
+## Quellen
 
-## Website
+All Grafiken basieren auf frei verfügbaren Daten.
 
-[This website](https://co2nscious.web.app/) renders previews of the graphs.
+Die Grafiken "Zusammensetzung der Schweizer Treibhausgasemissionen", "Möglichkeiten von individuellen Treibhausgaseinsparungen" und "Vergleich der Treibhausgasemissionen verschiedener Nahrungsmittel" werden auf [dieser Webseite](https://co2nscious.web.app/) zu Testzwecken grob gerendert.
 
-### Development
+Im Folgenden sind alle Datenquellen, und gegebenenfalls Links zum Quellcode für die Grafiken aufgeführt.
+
+### Kippelemente im Weltklima
+
+* [Wikipedia](https://en.wikipedia.org/wiki/Tipping_points_in_the_climate_system)
+* [Carbonbrief](https://www.carbonbrief.org/explainer-nine-tipping-points-that-could-be-triggered-by-climate-change/)
+* [Global Tipping Points - Report 2023](https://report-2023.global-tipping-points.org/section2/2-tipping-point-impacts/2-2-assessing-impacts-of-earth-system-tipping-points-on-human-societies/2-2-5-potential-for-earth-system-tipping-points-to-magnify-or-accelerate-impacts-of-global-warming/)
+* [Our World in Data](https://ourworldindata.org/grapher/consumption-co2-per-capita-equity?tab=table&time=2022)
+* [Climate Change Tracker](https://climatechangetracker.org/igcc)
+* [TED Talk](https://www.youtube.com/watch?v=Vl6VhCAeEfQ) (verlinkt weitere Quellen in Präsentation)
+* [World Map](https://en.m.wikipedia.org/wiki/File:BlankMap-World.svg)
+
+### Zusammensetzung der Schweizer Treibhausgasemissionen
+
+Die [Grafik](src/app/components/footprint-sunburst/chart.component.ts) basiert auf folgenden [Daten](src/app/data/Data.ts):
+
+* Bundesamt für Statistik [(1)](https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung.assetdetail.32374798.html), [(2)](https://www.bfs.admin.ch/news/de/2022-0544), [(3)](https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html)
+* [Bundesamt für Umwelt](https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html)
+* [Bundesamt für Raumentwicklung](https://www.are.admin.ch/dam/are/de/dokumente/verkehr/dokumente/mikrozensus/verkehrsverhalten-der-bevolkerung-2015.pdf.download.pdf/Verkehrsverhalten%20der%20Bev%C3%B6lkerung%202015.pdf)
+* [Parlament](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20214259)
+* WWF [(1)](https://www.wwf.ch/de/nachhaltig-leben/footprintrechner), [(2)](https://www.wwf.ch/de/nachhaltig-leben/mein-fussabdruck-mobilitaet)
+* [Swissrecycle](https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen)
+* [Tages-Anzeiger](https://www.tagesanzeiger.ch/altkleider-sammlung-nur-wenig-kleider-werden-recycelt-529856152838)
+* [Global E-waste](https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf)
+
+### Möglichkeiten von individuellen Treibhausgaseinsparungen
+
+Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf einigen Daten aus "Zusammensetzung der Schweizer Treibhausgasemissionen", und folgenden zusätztliche Daten:
+
+* [Greenpeace](https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf)
+* [Houzy](https://www.houzy.ch/post/co2-emissionen-von-heizungen)
+* [Dusche fürs Klima](https://duschbrause-co2.ch/fileadmin/ihs_bilder_grafiken/infografik_einsparungen_haushalt.jpg)
+* [Swissolar](https://www.swissolar.ch/01_wissen/swissolar-publikationen/branchen-faktenblatt_pv_ch_d.pdf)
+* [Solarenergie](https://www.solarenergie.de/photovoltaikanlage/finanzielles/lohnt-sich-photovoltaik/photovoltaik-im-winter)
+
+### Vergleich der Treibhausgasemissionen verschiedener Nahrungsmittel
+
+Die [Grafik](src/app/components/nutrition-ayce/chart.component.ts) basiert auf folgenden [Daten](src/app/data/NutritionAyce.ts):
+
+* [Eaternity](https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf)
+
+## Website development
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 

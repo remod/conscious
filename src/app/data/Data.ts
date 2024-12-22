@@ -1,35 +1,5 @@
 import { DataSource, DataPoint } from './Interfaces';
 
-// Plane: 9000 km / year.
-// Car: 10400 km / year.
-// 2015
-// https://www.are.admin.ch/dam/are/de/dokumente/verkehr/dokumente/mikrozensus/verkehrsverhalten-der-bevolkerung-2015.pdf.download.pdf/Verkehrsverhalten%20der%20Bev%C3%B6lkerung%202015.pdf
-
-// E-Waste: 23.4 kg / year.
-// 2024
-// https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf
-
-// Clothing: 60 pieces / year.
-// 2024
-// https://www.tagesanzeiger.ch/altkleider-sammlung-nur-wenig-kleider-werden-recycelt-529856152838
-
-// Switzerland has the 11th highest CO2 emissions per capita in the world (2022).
-// https://ourworldindata.org/grapher/consumption-co2-per-capita-equity?tab=table&time=2022
-
-// World map.
-// https://en.m.wikipedia.org/wiki/File:BlankMap-World.svg
-
-// Tipping points.
-// https://en.wikipedia.org/wiki/Tipping_points_in_the_climate_system
-// https://www.carbonbrief.org/explainer-nine-tipping-points-that-could-be-triggered-by-climate-change/
-// https://report-2023.global-tipping-points.org/section2/2-tipping-point-impacts/2-2-assessing-impacts-of-earth-system-tipping-points-on-human-societies/2-2-5-potential-for-earth-system-tipping-points-to-magnify-or-accelerate-impacts-of-global-warming/
-
-// Temperature increase.
-// https://climatechangetracker.org/igcc
-
-// TED talk.
-// https://www.youtube.com/watch?v=Vl6VhCAeEfQ&ab_channel=TED
-
 interface PopulationDataSource extends DataSource {
   data_points: {
     at2022: DataPoint;
