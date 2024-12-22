@@ -6,7 +6,19 @@ Der Klimawandel ist heute eine der grössten globalen Herausforderungen.
 Wenn wir es nicht schaffen, unseren Resourcenhunger innert wenigen Jahrzehnten drastisch einzudämmen doht uns und kommenden Generationen fatale ökologische und wirtschaftlich Konsequenzen.
 
 Damit ein so komplexes Problem gelöst werden kann, braucht es zum Einen ausreichende Motiation, zum Anderen aber auch das Wissen, welche Massnahmen wirkungsvoll sind.
-Die [Consume Consciously Infografik](poster/poster.svg) hat zum Ziel, diese Informationen zu bündeln und Motivation und Massnahmen klar aufzuzeigen.
+Die _Consume Consciously_ Infografik hat zum Ziel, diese Informationen zu bündeln und Motivation und Massnahmen klar aufzuzeigen.
+
+## Infografik
+
+> ⚠️ Die Infografik ist momentan noch in der Entwurfsphase.
+
+![Vorschau](poster/poster.png)
+
+Die Infografik ist in folgenden Formaten verfügbar:
+
+* [PDF](poster/poster.pdf)
+* [Vektorgrafik (.svg)](poster/poster.svg)
+* [Bild (.png)](poster/poster.png)
 
 ## Quellen
 
