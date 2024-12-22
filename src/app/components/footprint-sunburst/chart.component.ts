@@ -122,6 +122,11 @@ export class FootprintSunburstChartComponent implements OnInit {
               category: Category.Mobility,
             },
             {
+              name: 'Public Transport',
+              co2_eq: bus + ship + train,
+              category: Category.Mobility,
+            },
+            {
               name: 'Truck',
               co2_eq: truck,
               category: Category.Mobility,
@@ -131,26 +136,26 @@ export class FootprintSunburstChartComponent implements OnInit {
               co2_eq: delivery_van,
               category: Category.Mobility,
             },
-            {
-              name: 'Bus',
-              co2_eq: bus,
-              category: Category.Mobility,
-            },
+            // {
+            //   name: 'Bus',
+            //   co2_eq: bus,
+            //   category: Category.Mobility,
+            // },
             {
               name: 'Motorcycle',
               co2_eq: motorcycle,
               category: Category.Mobility,
             },
-            {
-              name: 'Ship',
-              co2_eq: ship,
-              category: Category.Mobility,
-            },
-            {
-              name: 'Train',
-              co2_eq: train,
-              category: Category.Mobility,
-            },
+            // {
+            //   name: 'Ship',
+            //   co2_eq: ship,
+            //   category: Category.Mobility,
+            // },
+            // {
+            //   name: 'Train',
+            //   co2_eq: train,
+            //   category: Category.Mobility,
+            // }
           ],
         },
         {
