@@ -8,6 +8,8 @@ Wenn wir es nicht schaffen, unseren Resourcenhunger innert wenigen Jahrzehnten d
 Damit ein so komplexes Problem gelöst werden kann, braucht es zum Einen ausreichende Motiation, zum Anderen aber auch das Wissen, welche Massnahmen wirkungsvoll sind.
 Die _Consume Consciously_ Infografik hat zum Ziel, diese Informationen zu bündeln und Motivation und Massnahmen klar aufzuzeigen.
 
+Die Lizenz befindet sich [hier](LICENSE).
+
 ## Infografik
 
 > ⚠️ Die Infografik ist momentan noch in der Entwurfsphase.
@@ -50,10 +52,11 @@ Die [Grafik](src/app/components/footprint-sunburst/chart.component.ts) basiert a
 * [Swissrecycle](https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen)
 * [Tages-Anzeiger](https://www.tagesanzeiger.ch/altkleider-sammlung-nur-wenig-kleider-werden-recycelt-529856152838)
 * [Global E-waste](https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf)
+* [Person Icon](https://uxwing.com/genderqueer-genderless-person-icon/)
 
 ### Möglichkeiten von individuellen Treibhausgaseinsparungen
 
-Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf einigen Daten aus "Zusammensetzung der Schweizer Treibhausgasemissionen", und folgenden zusätztliche Daten:
+Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf einigen Daten aus "Zusammensetzung der Schweizer Treibhausgasemissionen" und folgenden zusätztliche Daten:
 
 * [Greenpeace](https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf)
 * [Houzy](https://www.houzy.ch/post/co2-emissionen-von-heizungen)
@@ -66,6 +69,12 @@ Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf 
 Die [Grafik](src/app/components/nutrition-ayce/chart.component.ts) basiert auf folgenden [Daten](src/app/data/NutritionAyce.ts):
 
 * [Eaternity](https://foodforfuturefreiburg.de/wp-content/uploads/2022/04/Eaternity-All-you-can-eat.pdf)
+
+### Andere
+
+* [Weltkugel Icon](https://www.svgrepo.com/svg/137733/world)
+* Schriftarten [(1)](https://www.fontspace.com/joe-as-font-f26151), [(2)](https://design.ubuntu.com/font)
+* [QR-Code](https://www.qrcode-monkey.com/)
 
 ## Website development
 
