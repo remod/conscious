@@ -24,10 +24,11 @@ import { DataSource, DataPoint } from './Interfaces';
 // https://www.carbonbrief.org/explainer-nine-tipping-points-that-could-be-triggered-by-climate-change/
 // https://report-2023.global-tipping-points.org/section2/2-tipping-point-impacts/2-2-assessing-impacts-of-earth-system-tipping-points-on-human-societies/2-2-5-potential-for-earth-system-tipping-points-to-magnify-or-accelerate-impacts-of-global-warming/
 
-// Amazon deforestation is roughtly 2 million hectares per year.
-// 
-// 2023
-// https://infoamazonia.org/en/2023/03/21/deforestation-in-the-amazon-past-present-and-future/
+// Temperature increase.
+// https://climatechangetracker.org/igcc
+
+// TED talk.
+// https://www.youtube.com/watch?v=Vl6VhCAeEfQ&ab_channel=TED
 
 interface PopulationDataSource extends DataSource {
   data_points: {
