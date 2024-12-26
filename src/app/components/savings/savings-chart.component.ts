@@ -29,6 +29,8 @@ const nonFlightsSum: number = footprint.data_points.mobility.value * mobility_fr
 // 17.7% of the _new_ cars in Switzerland in 2022 were electric.
 // That means that the overall fleet is still mostly fossil fuel cars.
 const fossilCarSum: number = nonFlightsSum * ground_transport_fractions.data_points.car.value;
+// Assumption: While we know that the traveled distance in cars is 10'400 km per year, we don't use that number as it is canceling out.
+// We're only interested in the relative savings.
 const traveledDistance: number = fossilCarSum / transport_efficiency.data_points.fossil_car.value;
 // Assumption: When replacing a fossil fuel car with a public transport, the public transport is used for the same distance.
 const publicTransportSum: number = traveledDistance * transport_efficiency.data_points.public_transport_avg.value;

@@ -30,8 +30,10 @@ Die Grafiken "Zusammensetzung der Schweizer Treibhausgasemissionen", "Möglichke
 
 Im Folgenden sind alle Datenquellen, und gegebenenfalls Links zum Quellcode für die Grafiken aufgeführt.
 
-### Kippelemente im Weltklima
+### Globale Kippelemente
 
+* [Global Tipping Points](https://global-tipping-points.org/resources-gtp/)
+* [Greenpeace](https://www.greenpeace.org.uk/challenges/climate-change/solutions-climate-change/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Tipping_points_in_the_climate_system)
 * [Carbonbrief](https://www.carbonbrief.org/explainer-nine-tipping-points-that-could-be-triggered-by-climate-change/)
 * [Global Tipping Points - Report 2023](https://report-2023.global-tipping-points.org/section2/2-tipping-point-impacts/2-2-assessing-impacts-of-earth-system-tipping-points-on-human-societies/2-2-5-potential-for-earth-system-tipping-points-to-magnify-or-accelerate-impacts-of-global-warming/)
@@ -54,7 +56,7 @@ Die [Grafik](src/app/components/footprint-sunburst/chart.component.ts) basiert a
 * [Global E-waste](https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf)
 * [Person Icon](https://uxwing.com/genderqueer-genderless-person-icon/)
 
-### Möglichkeiten von individuellen Treibhausgaseinsparungen
+### Effektivitäten von individuellen Treibhausgaseinsparungen
 
 Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf einigen Daten aus "Zusammensetzung der Schweizer Treibhausgasemissionen" und folgenden zusätztliche Daten:
 
@@ -64,7 +66,7 @@ Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf 
 * [Swissolar](https://www.swissolar.ch/01_wissen/swissolar-publikationen/branchen-faktenblatt_pv_ch_d.pdf)
 * [Solarenergie](https://www.solarenergie.de/photovoltaikanlage/finanzielles/lohnt-sich-photovoltaik/photovoltaik-im-winter)
 
-### Vergleich der Treibhausgasemissionen verschiedener Nahrungsmittel
+### Treibhausgasemissionen verschiedener Nahrungsmittel
 
 Die [Grafik](src/app/components/nutrition-ayce/chart.component.ts) basiert auf folgenden [Daten](src/app/data/NutritionAyce.ts):
 
