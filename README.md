@@ -1,12 +1,10 @@
 ![Logo](Logo.png)
 
-_Consume Consciously_ ist ein Projekt mit dem Ziel, die Problematik des Klimawandels aber auch Lösungsansätze aufzuzeigen.
-
 Der Klimawandel ist heute eine der grössten globalen Herausforderungen.
-Wenn wir es nicht schaffen, unseren Resourcenhunger innert wenigen Jahrzehnten drastisch einzudämmen doht uns und kommenden Generationen fatale ökologische und wirtschaftlich Konsequenzen.
+Wir müssen die Emission von Treibhausgasen innert wenigen Jahrzehnten drastisch eindämmen um uns und kommenden Generationen fatale ökologische und wirtschaftlich Konsequenzen zu ersparen.
 
-Damit ein so komplexes Problem gelöst werden kann, braucht es zum Einen ausreichende Motiation, zum Anderen aber auch das Wissen, welche Massnahmen wirkungsvoll sind.
-Die _Consume Consciously_ Infografik hat zum Ziel, diese Informationen zu bündeln und Motivation und Massnahmen klar aufzuzeigen.
+Um ein solch komplexes Problem zu lösen braucht es zum einen die notwendige Motiation, zum anderen aber auch das Wissen, welche Massnahmen auch wirklich effektiv sind.
+_Consume Consciously_ ist ein Projekt mit dem Ziel, sowohl die Problematik des Klimawandels als auch individuelle Massnahmen aufzuzeigen.
 
 Die Lizenz befindet sich [hier](LICENSE).
 
