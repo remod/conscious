@@ -22,8 +22,6 @@ Die Infografik ist in folgenden Formaten verfügbar:
 
 Alle Grafiken basieren auf frei verfügbaren Daten.
 
-Die Grafiken "Zusammensetzung der Schweizer Treibhausgasemissionen", "Effektivität von individuellen Treibhausgaseinsparungen" und "Treibhausgasemissionen verschiedener Nahrungsmittel" werden auf [dieser Webseite](https://co2nscious.web.app/) zu Testzwecken grob gerendert.
-
 Im Folgenden sind alle Datenquellen, und gegebenenfalls Links zum Quellcode für die Grafiken aufgeführt.
 
 ### Globale Kippelemente
@@ -73,7 +71,9 @@ Die [Grafik](src/app/components/nutrition-ayce/chart.component.ts) basiert auf f
 * [QR-Code](https://www.qrcode-monkey.com/)
 * [Weltkugel Icon](https://www.svgrepo.com/svg/137733/world)
 
-## Website development
+## Webseite
+
+Die Grafiken "Zusammensetzung der Schweizer Treibhausgasemissionen", "Effektivität von individuellen Treibhausgaseinsparungen" und "Treibhausgasemissionen verschiedener Nahrungsmittel" werden auf [dieser Webseite](https://co2nscious.web.app/) zu Testzwecken grob gerendert.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
