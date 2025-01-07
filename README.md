@@ -1,9 +1,9 @@
 ![Logo](Logo.png)
 
 Der Klimawandel ist heute eine der grössten globalen Herausforderungen.
-Wir müssen die Emission von Treibhausgasen innert wenigen Jahrzehnten drastisch eindämmen um uns und kommenden Generationen fatale ökologische und wirtschaftlich Konsequenzen zu ersparen.
+Wir müssen die Emission von Treibhausgasen innert wenigen Jahrzehnten drastisch eindämmen um uns und kommenden Generationen fatale ökologische und wirtschaftliche Konsequenzen zu ersparen.
 
-Um ein solch komplexes Problem zu lösen braucht es zum einen die notwendige Motiation, zum anderen aber auch das Wissen, welche Massnahmen auch wirklich effektiv sind.
+Um ein solch komplexes Problem zu lösen braucht es zum einen die notwendige Motivation, zum anderen aber auch das Wissen, welche Massnahmen auch wirklich effektiv sind.
 _Consume Consciously_ ist ein Projekt mit dem Ziel, sowohl die Problematik des Klimawandels als auch individuelle Massnahmen aufzuzeigen.
 
 Die Lizenz befindet sich [hier](LICENSE).
@@ -20,9 +20,9 @@ Die Infografik ist in folgenden Formaten verfügbar:
 
 ## Quellen
 
-All Grafiken basieren auf frei verfügbaren Daten.
+Alle Grafiken basieren auf frei verfügbaren Daten.
 
-Die Grafiken "Zusammensetzung der Schweizer Treibhausgasemissionen", "Möglichkeiten von individuellen Treibhausgaseinsparungen" und "Vergleich der Treibhausgasemissionen verschiedener Nahrungsmittel" werden auf [dieser Webseite](https://co2nscious.web.app/) zu Testzwecken grob gerendert.
+Die Grafiken "Zusammensetzung der Schweizer Treibhausgasemissionen", "Effektivität von individuellen Treibhausgaseinsparungen" und "Treibhausgasemissionen verschiedener Nahrungsmittel" werden auf [dieser Webseite](https://co2nscious.web.app/) zu Testzwecken grob gerendert.
 
 Im Folgenden sind alle Datenquellen, und gegebenenfalls Links zum Quellcode für die Grafiken aufgeführt.
 
@@ -52,9 +52,9 @@ Die [Grafik](src/app/components/footprint-sunburst/chart.component.ts) basiert a
 * [Global E-waste](https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf)
 * [Person Icon](https://uxwing.com/genderqueer-genderless-person-icon/)
 
-### Effektivitäten von individuellen Treibhausgaseinsparungen
+### Effektivität von individuellen Treibhausgaseinsparungen
 
-Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf einigen Daten aus "Zusammensetzung der Schweizer Treibhausgasemissionen" und folgenden zusätztliche Daten:
+Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf einigen Daten aus "Zusammensetzung der Schweizer Treibhausgasemissionen" und folgenden zusätzliche Daten:
 
 * [Greenpeace](https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf)
 * [Houzy](https://www.houzy.ch/post/co2-emissionen-von-heizungen)
