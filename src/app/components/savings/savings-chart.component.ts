@@ -144,7 +144,7 @@ export class SavingsChartComponent {
 
   constructor() {
     for (const item of data) {
-      console.log(item.name, item.category, "length: ", (item.co2_eq / 12).toFixed(1));
+      console.log(item.name, item.category, "boxes: ", ((item.co2_eq / footprint_sum) * 100 / 0.25).toFixed(1));
     }
     this.chartOptions = {
       series: [
