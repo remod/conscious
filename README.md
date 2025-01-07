@@ -3,8 +3,8 @@
 Der Klimawandel ist heute eine der grössten globalen Herausforderungen.
 Wir müssen die Emission von Treibhausgasen innert wenigen Jahrzehnten drastisch eindämmen um uns und kommenden Generationen fatale ökologische und wirtschaftliche Konsequenzen zu ersparen.
 
-Um ein solch komplexes Problem zu lösen braucht es zum einen die notwendige Motivation, zum anderen aber auch das Wissen, welche Massnahmen auch wirklich effektiv sind.
-_Consume Consciously_ ist ein Projekt mit dem Ziel, sowohl die Problematik des Klimawandels als auch individuelle Massnahmen aufzuzeigen.
+Um ein solch komplexes Problem zu lösen braucht es zum einen die notwendige Motivation, zum anderen aber auch das Wissen, welche Massnahmen wirklich effektiv sind.
+_Consume Consciously_ ist ein Projekt mit dem Ziel, sowohl die Konsequenzen des Klimawandels als auch individuelle Massnahmen aufzuzeigen.
 
 Die Lizenz befindet sich [hier](LICENSE).
 
@@ -28,39 +28,38 @@ Im Folgenden sind alle Datenquellen, und gegebenenfalls Links zum Quellcode für
 
 ### Globale Kippelemente
 
-* [Global Tipping Points](https://global-tipping-points.org/resources-gtp/)
-* [Greenpeace](https://www.greenpeace.org.uk/challenges/climate-change/solutions-climate-change/)
-* [Wikipedia](https://en.wikipedia.org/wiki/Tipping_points_in_the_climate_system)
 * [Carbonbrief](https://www.carbonbrief.org/explainer-nine-tipping-points-that-could-be-triggered-by-climate-change/)
-* [Global Tipping Points - Report 2023](https://report-2023.global-tipping-points.org/section2/2-tipping-point-impacts/2-2-assessing-impacts-of-earth-system-tipping-points-on-human-societies/2-2-5-potential-for-earth-system-tipping-points-to-magnify-or-accelerate-impacts-of-global-warming/)
-* [Our World in Data](https://ourworldindata.org/grapher/consumption-co2-per-capita-equity?tab=table&time=2022)
 * [Climate Change Tracker](https://climatechangetracker.org/igcc)
+* [Global Tipping Points - Report 2023](https://report-2023.global-tipping-points.org/section2/2-tipping-point-impacts/2-2-assessing-impacts-of-earth-system-tipping-points-on-human-societies/2-2-5-potential-for-earth-system-tipping-points-to-magnify-or-accelerate-impacts-of-global-warming/)
+* [Greenpeace](https://www.greenpeace.org.uk/challenges/climate-change/solutions-climate-change/)
+* [Our World in Data](https://ourworldindata.org/grapher/consumption-co2-per-capita-equity?tab=table&time=2022)
 * [TED Talk](https://www.youtube.com/watch?v=Vl6VhCAeEfQ) (verlinkt weitere Quellen in Präsentation)
+* [Wikipedia](https://en.wikipedia.org/wiki/Tipping_points_in_the_climate_system)
 * [World Map](https://en.m.wikipedia.org/wiki/File:BlankMap-World.svg)
 
 ### Zusammensetzung der Schweizer Treibhausgasemissionen
 
 Die [Grafik](src/app/components/footprint-sunburst/chart.component.ts) basiert auf folgenden [Daten](src/app/data/Data.ts):
 
+* [Bundesamt für Raumentwicklung](https://www.are.admin.ch/dam/are/de/dokumente/verkehr/dokumente/mikrozensus/verkehrsverhalten-der-bevolkerung-2015.pdf.download.pdf/Verkehrsverhalten%20der%20Bev%C3%B6lkerung%202015.pdf)
 * Bundesamt für Statistik [(1)](https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung.assetdetail.32374798.html), [(2)](https://www.bfs.admin.ch/news/de/2022-0544), [(3)](https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html)
 * [Bundesamt für Umwelt](https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html)
-* [Bundesamt für Raumentwicklung](https://www.are.admin.ch/dam/are/de/dokumente/verkehr/dokumente/mikrozensus/verkehrsverhalten-der-bevolkerung-2015.pdf.download.pdf/Verkehrsverhalten%20der%20Bev%C3%B6lkerung%202015.pdf)
+* [Global E-waste](https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf)
 * [Parlament](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20214259)
-* WWF [(1)](https://www.wwf.ch/de/nachhaltig-leben/footprintrechner), [(2)](https://www.wwf.ch/de/nachhaltig-leben/mein-fussabdruck-mobilitaet)
+* [Person Icon](https://uxwing.com/genderqueer-genderless-person-icon/)
 * [Swissrecycle](https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen)
 * [Tages-Anzeiger](https://www.tagesanzeiger.ch/altkleider-sammlung-nur-wenig-kleider-werden-recycelt-529856152838)
-* [Global E-waste](https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf)
-* [Person Icon](https://uxwing.com/genderqueer-genderless-person-icon/)
+* WWF [(1)](https://www.wwf.ch/de/nachhaltig-leben/footprintrechner), [(2)](https://www.wwf.ch/de/nachhaltig-leben/mein-fussabdruck-mobilitaet)
 
 ### Effektivität von individuellen Treibhausgaseinsparungen
 
 Die [Grafik](src/app/components/savings/savings-chart.component.ts) basiert auf einigen Daten aus "Zusammensetzung der Schweizer Treibhausgasemissionen" und folgenden zusätzliche Daten:
 
+* [Dusche fürs Klima](https://duschbrause-co2.ch/fileadmin/ihs_bilder_grafiken/infografik_einsparungen_haushalt.jpg)
 * [Greenpeace](https://www.greenpeace.ch/static/planet4-switzerland-stateless/2022/03/20967b15-infras_zusammenfassung-laengere-nutzungsdauer_de_20220322.pdf)
 * [Houzy](https://www.houzy.ch/post/co2-emissionen-von-heizungen)
-* [Dusche fürs Klima](https://duschbrause-co2.ch/fileadmin/ihs_bilder_grafiken/infografik_einsparungen_haushalt.jpg)
-* [Swissolar](https://www.swissolar.ch/01_wissen/swissolar-publikationen/branchen-faktenblatt_pv_ch_d.pdf)
 * [Solarenergie](https://www.solarenergie.de/photovoltaikanlage/finanzielles/lohnt-sich-photovoltaik/photovoltaik-im-winter)
+* [Swissolar](https://www.swissolar.ch/01_wissen/swissolar-publikationen/branchen-faktenblatt_pv_ch_d.pdf)
 
 ### Treibhausgasemissionen verschiedener Nahrungsmittel
 
@@ -70,9 +69,9 @@ Die [Grafik](src/app/components/nutrition-ayce/chart.component.ts) basiert auf f
 
 ### Andere
 
-* [Weltkugel Icon](https://www.svgrepo.com/svg/137733/world)
 * Schriftarten [(1)](https://www.fontspace.com/joe-as-font-f26151), [(2)](https://design.ubuntu.com/font)
 * [QR-Code](https://www.qrcode-monkey.com/)
+* [Weltkugel Icon](https://www.svgrepo.com/svg/137733/world)
 
 ## Website development
 
