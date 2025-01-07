@@ -10,8 +10,6 @@ Die Lizenz befindet sich [hier](LICENSE).
 
 ## Infografik
 
-> ⚠️ Die Infografik ist momentan noch in der Entwurfsphase.
-
 ![Vorschau](poster/poster.png)
 
 Die Infografik ist in folgenden Formaten verfügbar:
