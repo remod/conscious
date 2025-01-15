@@ -313,3 +313,24 @@ export const nutrition: NutritionDataSource = {
     },
   },
 };
+
+interface SeasonalRegionalDataSource extends DataSource {
+  data_points: {
+    seasonal_regional: DataPoint;
+  }
+}
+
+export const seasonal_regional: SeasonalRegionalDataSource = {
+  name: 'Seasonal and Regional',
+  unit: '% of Fruit and Vegetables',
+  source: 'https://www.wwf.ch/de/nachhaltig-leben/footprintrechner',
+  year: 2024,
+  data_points:
+  {
+    seasonal_regional:
+    {
+      name: 'Seasonal and Regional',
+      value: 0.1, // People consuming seasonal and regional vegetables and fruits have only 10% of the average footprint of vegetables and fruits.
+    },
+  },
+};

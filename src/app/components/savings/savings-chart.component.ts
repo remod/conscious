@@ -15,7 +15,12 @@ import {
   shower_savings,
   transport_efficiency
 } from '../../data/Data';
-import { diet_fractions, food_waste_fractions } from '../../data/Nutrition';
+import {
+  diet_fractions,
+  food_waste_fractions,
+  nutrition_fractions,
+  seasonal_regional
+} from '../../data/Nutrition';
 
 export type Data = {
   name: string;
@@ -55,13 +60,6 @@ const data: Data[] = [
     category: Category.Mobility,
   },
   {
-    name: 'Replace Fossil Fuel Heating with Renewable Heating',
-    co2_eq:
-      (fossilHeating - renewableHeating) /
-      household_size.data_points.at2022.value,
-    category: Category.Housing,
-  },
-  {
     name: 'Use Public Transport instead of Fossil Fuel Car',
     co2_eq: fossilCarSum - publicTransportSum,
     category: Category.Mobility,
@@ -72,17 +70,49 @@ const data: Data[] = [
     category: Category.Mobility,
   },
   {
-    name: 'Become Vegan',
-    // Assumption: Diet fractions apply in the same way to consumed food and wasted food.
-    co2_eq: (diet_fractions.data_points.standard.value - diet_fractions.data_points.vegan.value) *
-      footprint.data_points.nutrition.value,
-    category: Category.Nutrition,
+    name: 'Use Clothing 7 instead of 4 Years',
+    co2_eq: extended_usage.data_points.clothing.value,
+    category: Category.Consumption,
+  },
+  {
+    name: 'Recycle',
+    co2_eq: recycle.data_points.recycle.value,
+    category: Category.Consumption,
+  },
+  {
+    name: 'Use Furniture 13.5 instead of 10.5 Years',
+    co2_eq: extended_usage.data_points.furniture.value,
+    category: Category.Consumption,
+  },
+  {
+    name: 'Use Smartphone 5.3 instead of 2.3 Years',
+    co2_eq: extended_usage.data_points.smartphone.value,
+    category: Category.Consumption,
+  },
+  {
+    name: 'Replace Fossil Fuel Heating with Renewable Heating',
+    co2_eq:
+      (fossilHeating - renewableHeating) /
+      household_size.data_points.at2022.value,
+    category: Category.Housing,
   },
   {
     name: 'Install 10 kWp Solar Panels',
     co2_eq: (power_production_efficiency.data_points.average.value - power_production_efficiency.data_points.solar.value) *
       power_production_yield.data_points.solar.value * 10,
     category: Category.Housing,
+  },
+  {
+    name: 'Use economy shower head',
+    co2_eq: shower_savings.data_points.economy_shower.value,
+    category: Category.Housing,
+  },
+  {
+    name: 'Become Vegan',
+    // Assumption: Diet fractions apply in the same way to consumed food and wasted food.
+    co2_eq: (diet_fractions.data_points.standard.value - diet_fractions.data_points.vegan.value) *
+      footprint.data_points.nutrition.value,
+    category: Category.Nutrition,
   },
   {
     name: 'Become Vegetarian',
@@ -105,30 +135,11 @@ const data: Data[] = [
     category: Category.Nutrition,
   },
   {
-    name: 'Use Clothing 7 instead of 4 Years',
-    co2_eq: extended_usage.data_points.clothing.value,
-    category: Category.Consumption,
-  },
-  {
-    name: 'Use economy shower head',
-    co2_eq: shower_savings.data_points.economy_shower.value,
-    category: Category.Housing,
-  },
-  {
-    name: 'Recycle',
-    co2_eq: recycle.data_points.recycle.value,
-    category: Category.Consumption,
-  },
-  {
-    name: 'Use Furniture 13.5 instead of 10.5 Years',
-    co2_eq: extended_usage.data_points.furniture.value,
-    category: Category.Consumption,
-  },
-  {
-    name: 'Use Smartphone 5.3 instead of 2.3 Years',
-    co2_eq: extended_usage.data_points.smartphone.value,
-    category: Category.Consumption,
-  },
+    name: 'Buy seasonal and regional vegetables and fruits',
+    // Assumption: You have an average diet including meat and fish.
+    co2_eq: footprint.data_points.nutrition.value * ((1.0 - seasonal_regional.data_points.seasonal_regional.value) * nutrition_fractions.data_points.vegetables_fruits.value),
+    category: Category.Nutrition,
+  }
 ];
 
 @Component({
