@@ -148,7 +148,7 @@ interface MeatWeigthDataSource extends DataSource {
 export const meat_bought: MeatWeigthDataSource = {
   name: 'Meat bought',
   unit: 'kg',
-  // Overview: https://www.agrarbericht.ch/de/markt/tierische-produktion/fleisch-und-eier
+  // Overview: https://www.agrarbericht.ch/de/produktion/tierische-produktion/fleisch-und-eierproduktion
   source: 'https://www.proviande.ch/sites/proviande/files/2020-05/Der%20Fleischmarkt%20im%20%C3%9Cberblick%20-%20Aktuelle%20Ausgabe.pdf',
   year: 2022,
   data_points:
@@ -235,7 +235,7 @@ interface MilkProductsWeightDataSource extends DataSource {
 export const milk_products_bought: MilkProductsWeightDataSource = {
   name: 'Milk Products bought',
   unit: 'kg',
-  // Overview: https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte
+  // Overview: https://www.agrarbericht.ch/de/markt/tierische-produkte/milch-und-milchprodukte
   // Attention: The value for yogurt seems to be wrong in the table, because the PDF says it's VMA and not kg.
   source: 'https://www.sbv-usp.ch/fileadmin/user_upload/MISTA2022_def_online.pdf',
   year: 2022,

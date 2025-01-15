@@ -39,15 +39,20 @@ Im Folgenden sind alle Datenquellen, und gegebenenfalls Links zum Quellcode für
 
 Die [Grafik](src/app/components/footprint-sunburst/chart.component.ts) basiert auf folgenden [Daten](src/app/data/Data.ts):
 
+* Agrarbericht [(1)](https://www.agrarbericht.ch/de/produktion/tierische-produktion/fleisch-und-eierproduktion), [(2)](https://www.agrarbericht.ch/de/markt/tierische-produkte/milch-und-milchprodukte)
+* [Aviforum](https://www.aviforum.ch/Portaldata/1/Resources/wissen/statistiken/de/FB_11_2_23.pdf)
 * [Bundesamt für Raumentwicklung](https://www.are.admin.ch/dam/are/de/dokumente/verkehr/dokumente/mikrozensus/verkehrsverhalten-der-bevolkerung-2015.pdf.download.pdf/Verkehrsverhalten%20der%20Bev%C3%B6lkerung%202015.pdf)
 * Bundesamt für Statistik [(1)](https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung.assetdetail.32374798.html), [(2)](https://www.bfs.admin.ch/news/de/2022-0544), [(3)](https://www.bfs.admin.ch/bfs/de/home/statistiken/mobilitaet-verkehr/unfaelle-umweltauswirkungen/umweltauswirkungen.html)
-* [Bundesamt für Umwelt](https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html)
+* Bundesamt für Umwelt [(1)](https://www.bafu.admin.ch/bafu/de/home/themen/klima/zustand/daten/co2-statistik.html), [(2)](https://www.bafu.admin.ch/dam/bafu/de/dokumente/abfall/externe-studien-berichte/lebensmittelverluste-in-der-schweiz-umweltbelastung-und-verminderungspotenzial.pdf.download.pdf/ETH-Bericht_Foodwaste_FINAL.pdf)
 * [Global E-waste](https://api.globalewaste.org/publications/file/297/Global-E-waste-Monitor-2024.pdf)
+* [Institut für Energie- und Umweltforschung Heidelberg](https://www.ifeu.de/fileadmin/uploads/Reinhardt-Gaertner-Wagner-2020-Oekologische-Fu%C3%9Fabdruecke-von-Lebensmitteln-und-Gerichten-in-Deutschland-ifeu-2020.pdf)
 * [Parlament](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20214259)
 * [Person Icon](https://uxwing.com/genderqueer-genderless-person-icon/)
+* [Schweizer Baurnverband](https://www.sbv-usp.ch/fileadmin/user_upload/MISTA2022_def_online.pdf)
+* [Swissmilk](https://www.swissmilk.ch/de/rezepte-kochideen/tipps-tricks/wie-viel-wiegt-ein-ei/)
 * [Swissrecycle](https://swissrecycle.ch/de/wertstoffe-wissen/leistungsbericht-2023/kennzahlen)
 * [Tages-Anzeiger](https://www.tagesanzeiger.ch/altkleider-sammlung-nur-wenig-kleider-werden-recycelt-529856152838)
-* WWF [(1)](https://www.wwf.ch/de/nachhaltig-leben/footprintrechner), [(2)](https://www.wwf.ch/de/nachhaltig-leben/mein-fussabdruck-mobilitaet)
+* WWF [(1)](https://www.wwf.ch/de/nachhaltig-leben/footprintrechner), [(2)](https://www.wwf.ch/de/nachhaltig-leben/mein-fussabdruck-mobilitaet), [(3)](https://www.wwf.ch/sites/default/files/doc-2023-04/Faktenblatt_Ern%C3%A4hrung_DE.pdf)
 
 ### Effektivität von individuellen Treibhausgaseinsparungen
 
