@@ -1,14 +1,16 @@
 ![Logo](Logo.png)
 
-Der Klimawandel ist heute eine der grössten globalen Herausforderungen.
-Wir müssen die Emission von Treibhausgasen innert wenigen Jahrzehnten drastisch eindämmen um uns und kommenden Generationen fatale ökologische und wirtschaftliche Konsequenzen zu ersparen.
+Der Klimawandel zählt zu den grössten globalen Herausforderungen unserer Zeit.
+Wir müssen die Emission von Treibhausgasen innert wenigen Jahrzehnten drastisch eindämmen um uns und kommenden Generationen schwerwiegende ökologische und wirtschaftliche Konsequenzen zu ersparen.
 
-Um ein solch komplexes Problem zu lösen braucht es zum einen die notwendige Motivation, zum anderen aber auch das Wissen, welche Massnahmen wirklich effektiv sind.
+Um ein so komplexes Problem zu lösen erfordert es zum einen die notwendige Motivation, zum anderen aber auch das Wissen, welche Massnahmen tatsächlich wirksam sind.
 _Consume Consciously_ ist ein Projekt mit dem Ziel, sowohl die Konsequenzen des Klimawandels als auch individuelle Massnahmen aufzuzeigen.
 
 Die Lizenz befindet sich [hier](LICENSE).
 
 ## Infografik
+
+Erhalte einen kostenlosen Ausdruck (A1): get.a.consume.consciously.poster@gmail.com
 
 ![Vorschau](poster/poster.png)
 
