@@ -274,33 +274,8 @@ export class FootprintSunburstChartComponent implements OnInit {
             },
             {
               name: 'Beverages',
-              co2_eq:
-                beverages -
-                food_waste_fractions.data_points.consumed_food.value * 17.42 * nutrition.data_points.wine.value -
-                food_waste_fractions.data_points.consumed_food.value * 9.49 * nutrition.data_points.wine.value,
+              co2_eq: beverages,
               category: Category.Nutrition,
-              children: [
-                {
-                  name: 'Red Wine',
-                  co2_eq:
-                    food_waste_fractions.data_points.consumed_food.value * 17.42 *
-                    nutrition.data_points.wine.value,
-                  category: Category.Nutrition,
-                  source:
-                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
-                  year: 2022,
-                },
-                {
-                  name: 'White Wine',
-                  co2_eq:
-                    food_waste_fractions.data_points.consumed_food.value * 9.49 *
-                    nutrition.data_points.wine.value,
-                  category: Category.Nutrition,
-                  source:
-                    'https://www.agrarbericht.ch/de/markt/tierische-produktion/milch-und-milchprodukte',
-                  year: 2022,
-                },
-              ],
             },
             {
               // TODO: milk_cheese_eggs seems to be too small compared to the sum of the children.
